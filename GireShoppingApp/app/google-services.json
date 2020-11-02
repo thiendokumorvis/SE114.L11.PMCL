@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "807351116706",
-    "firebase_url": "https://database-19ff9.firebaseio.com",
-    "project_id": "database-19ff9",
-    "storage_bucket": "database-19ff9.appspot.com"
+    "project_number": "225795039844",
+    "firebase_url": "https://gire-shopping-app-d1c02.firebaseio.com",
+    "project_id": "gire-shopping-app-d1c02",
+    "storage_bucket": "gire-shopping-app-d1c02.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:807351116706:android:7142bee1bd6d045f0488fb",
+        "mobilesdk_app_id": "1:225795039844:android:c9f0b16bf18c326bf47571",
         "android_client_info": {
           "package_name": "edu.uit.gireshoppingapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "807351116706-s34c5tj0h6h71qbfmdhcu9jfen1vajeg.apps.googleusercontent.com",
+          "client_id": "225795039844-ior1kqme01r4grst3j9jg21s6g9mar0b.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB4DhhF8pYNAZaWcGMEeqWXUVocbZZzbPg"
+          "current_key": "AIzaSyBeQiBxpvOYkVuOms74STvYvIrW0waFXY4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "807351116706-s34c5tj0h6h71qbfmdhcu9jfen1vajeg.apps.googleusercontent.com",
+              "client_id": "225795039844-ior1kqme01r4grst3j9jg21s6g9mar0b.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
