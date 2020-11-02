@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "807351116706",
+    "firebase_url": "https://database-19ff9.firebaseio.com",
+    "project_id": "database-19ff9",
+    "storage_bucket": "database-19ff9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807351116706:android:7142bee1bd6d045f0488fb",
+        "android_client_info": {
+          "package_name": "edu.uit.gireshoppingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "807351116706-s34c5tj0h6h71qbfmdhcu9jfen1vajeg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4DhhF8pYNAZaWcGMEeqWXUVocbZZzbPg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "807351116706-s34c5tj0h6h71qbfmdhcu9jfen1vajeg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

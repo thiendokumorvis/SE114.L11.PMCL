@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GireShoppingApp">
         <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
