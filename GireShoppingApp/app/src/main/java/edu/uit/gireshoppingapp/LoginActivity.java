@@ -34,14 +34,13 @@ public class LoginActivity extends AppCompatActivity {
         registerButton = findViewById(R.id.goToRegisterButton);
         loginProgressBar = findViewById(R.id.loginProgressBar);
 
-        String email = loginEmail.getText().toString();
-        String password = loginPassword.getText().toString();
-
         mAuth = FirebaseAuth.getInstance();
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String email = loginEmail.getText().toString();
+                String password = loginPassword.getText().toString();
                 if(email.length() <= 8 || password.length() <= 8)
                     Toast.makeText(LoginActivity.this, "Email and password must be more than 8 characters.",
                             Toast.LENGTH_SHORT).show();
