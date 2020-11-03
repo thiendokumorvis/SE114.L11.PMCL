@@ -80,6 +80,9 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this, "Authentication succeeded.",
                                     Toast.LENGTH_SHORT).show();
                             loginProgressBar.setVisibility(View.GONE);
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            finish();
+                            startActivity(intent);
                         } else {
                             Toast.makeText(LoginActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
