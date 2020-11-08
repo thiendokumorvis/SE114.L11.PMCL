@@ -23,8 +23,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     ArrayList<Item> items = new ArrayList<>();
     private Context mContext;
 
-    public RecyclerViewAdapter(Context mContext) {
+    public RecyclerViewAdapter(Context mContext, ArrayList<Item> items) {
         this.mContext = mContext;
+        this.items = items;
     }
 
     @NonNull
@@ -70,6 +71,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            itemImg = itemView.findViewById(R.id.item_image);
             parent = itemView.findViewById(R.id.item_view);
             itemName = itemView.findViewById(R.id.item_name);
             itemPrice = itemView.findViewById(R.id.item_price);
