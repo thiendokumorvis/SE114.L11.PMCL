@@ -73,8 +73,8 @@ public class HomeFragment extends Fragment {
         items = new ArrayList<>();
         items.add(new Item(1, "SHOES", 150, "PRODUCT", "https://m.media-amazon.com/images/I/41Leu3gBUFL.jpg"));
         // adapter.setItems(items);
-        adapter = new RecyclerViewAdapter(getActivity(), items);
-        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+        adapter = new RecyclerViewAdapter(view.getContext(), items);
+        recyclerView.setLayoutManager(new GridLayoutManager(view.getContext(), 2));
         recyclerView.setAdapter(adapter);
 
         return view;

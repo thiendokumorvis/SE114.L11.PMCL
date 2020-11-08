@@ -46,7 +46,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, items.get(position).getName() + "Selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, items.get(position).getName() + " Selected", Toast.LENGTH_SHORT).show();
             }
         });
     }
