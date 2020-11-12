@@ -9,6 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -20,8 +25,8 @@ import java.util.ArrayList;
 public class HomeFragment extends Fragment {
 
     RecyclerView recyclerView;
-    RecyclerViewAdapter adapter;
-    ArrayList<Item> items;
+    ItemAdapter adapter;
+    DatabaseReference mbase;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -68,15 +73,35 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-
         recyclerView = view.findViewById(R.id.home_recview);
-        items = new ArrayList<>();
-        items.add(new Item(1, "SHOES", 150, "PRODUCT", "https://m.media-amazon.com/images/I/41Leu3gBUFL.jpg"));
-        // adapter.setItems(items);
-        adapter = new RecyclerViewAdapter(view.getContext(), items);
+        mbase = FirebaseDatabase.getInstance().getReference();
+
+        FirebaseRecyclerOptions<Item> items
+                = new FirebaseRecyclerOptions.Builder<Item>()
+                .setQuery(mbase, Item.class)
+                .build();
+
+//        items = new ArrayList<>();
+//        items.add(new Item("1", "SHOES", "150", "PRODUCT", "https://m.media-amazon.com/images/I/41Leu3gBUFL.jpg"));
+
+        adapter = new ItemAdapter(items, view.getContext());
         recyclerView.setLayoutManager(new GridLayoutManager(view.getContext(), 2));
         recyclerView.setAdapter(adapter);
 
         return view;
+    }
+
+    @Override public void onStart()
+    {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    // Function to tell the app to stop getting
+    // data from database on stoping of the activity
+    @Override public void onStop()
+    {
+        super.onStop();
+        adapter.stopListening();
     }
 }
