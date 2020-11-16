@@ -13,8 +13,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -33,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseDatabase database;
     private static final String TAG = "MainActivity";
 
+    private static User user;
+    public static User getCurrentUser()
+    {
+        return user;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         nv = findViewById(R.id.nav_view);
         mAuth = FirebaseAuth.getInstance();
 
+        // Ger user's data
         database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("users/" + mAuth.getUid());
 
@@ -51,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                User user = dataSnapshot.getValue(User.class);
+                user = dataSnapshot.getValue(User.class);
                 // Log.i(TAG, user.toString());
             }
 
@@ -78,6 +88,25 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        // Setup drawer's header
+
+//        ImageView userImg;
+//        TextView username;
+//        TextView balance;
+//
+//        View navHeaderView = nv.getHeaderView(0);
+//
+//        userImg = navHeaderView.findViewById(R.id.drawer_userImg);
+//        balance = navHeaderView.findViewById(R.id.drawer_balance);
+//        username = navHeaderView.findViewById(R.id.drawer_username);
+//
+//        Glide.with(navHeaderView.getContext())
+//                .asBitmap()
+//                .load(user.getImgURL())
+//                .into(userImg);
+//        balance.setText("BALANCE: " + user.getBalance());
+//        username.setText("USERNAME: " + user.getName());
     }
 
     @Override

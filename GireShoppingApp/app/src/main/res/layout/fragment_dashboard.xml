@@ -6,24 +6,29 @@
     tools:context=".DashboardFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_margin="16dp">
+        <ImageView
+            android:layout_width="172dp"
+            android:layout_height="172dp"
+            android:id="@+id/userImg"
+            android:layout_centerHorizontal="true" />
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/username"
-            android:text="1" />
+            android:text="1"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/userImg" />
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/balance"
-            android:text="2" />
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/userImg" />
-    </LinearLayout>
+            android:text="2"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/username" />
+    </RelativeLayout>
 
 </FrameLayout>

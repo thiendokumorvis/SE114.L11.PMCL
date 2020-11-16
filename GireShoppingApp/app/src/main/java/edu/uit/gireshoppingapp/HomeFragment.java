@@ -24,9 +24,9 @@ import java.util.ArrayList;
  */
 public class HomeFragment extends Fragment {
 
-    RecyclerView recyclerView;
-    ItemAdapter adapter;
-    DatabaseReference mbase;
+    private RecyclerView recyclerView;
+    private ItemAdapter adapter;
+    private DatabaseReference mbase;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
