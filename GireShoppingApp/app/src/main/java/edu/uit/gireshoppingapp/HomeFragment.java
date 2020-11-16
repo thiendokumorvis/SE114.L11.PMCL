@@ -74,7 +74,7 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = view.findViewById(R.id.home_recview);
-        mbase = FirebaseDatabase.getInstance().getReference();
+        mbase = FirebaseDatabase.getInstance().getReference("items");
 
         FirebaseRecyclerOptions<Item> items
                 = new FirebaseRecyclerOptions.Builder<Item>()
