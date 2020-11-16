@@ -10,12 +10,18 @@ import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar tb;
     private NavigationView nv;
     private AppBarConfiguration appBarConfiguration;
+    private FirebaseDatabase database;
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +42,24 @@ public class MainActivity extends AppCompatActivity {
         tb = findViewById(R.id.toolbar);
         nv = findViewById(R.id.nav_view);
         mAuth = FirebaseAuth.getInstance();
+
+        database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference("users/" + mAuth.getUid());
+
+        System.out.println("users/" + mAuth.getUid());
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
+                // Log.i(TAG, user.toString());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // System.out.println("The read failed: " + databaseError.getCode());
+            }
+        });
 
         // Setting up toolbar and fragments
         setSupportActionBar(tb);

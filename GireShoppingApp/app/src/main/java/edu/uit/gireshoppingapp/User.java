@@ -7,11 +7,8 @@ public class User {
     private String imgURL;
     private String balance;
 
-    public User(String name, String imgURL, String balance)
+    public User()
     {
-        this.name = name;
-        this.imgURL = imgURL;
-        this.balance = balance;
     }
 
     public String getName() {
