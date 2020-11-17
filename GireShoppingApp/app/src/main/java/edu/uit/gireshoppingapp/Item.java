@@ -10,35 +10,31 @@ public class Item {
     public Item() {
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getPrice() {
-        return price;
+    public Item(String desc, String id, String imgURL, String name, String price) {
+        this.desc = desc;
+        this.id = id;
+        this.imgURL = imgURL;
+        this.name = name;
+        this.price = price;
     }
 
     public String getDesc() {
         return desc;
     }
 
+    public String getId() {
+        return id;
+    }
+
     public String getImgURL() {
         return imgURL;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getName() {
+        return name;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
-    public void setImgURL(String imgURL) {
-        this.imgURL = imgURL;
+    public String getPrice() {
+        return price;
     }
 }

@@ -81,9 +81,6 @@ public class HomeFragment extends Fragment {
                 .setQuery(mbase, Item.class)
                 .build();
 
-//        items = new ArrayList<>();
-//        items.add(new Item("1", "SHOES", "150", "PRODUCT", "https://m.media-amazon.com/images/I/41Leu3gBUFL.jpg"));
-
         adapter = new ItemAdapter(items, view.getContext());
         recyclerView.setLayoutManager(new GridLayoutManager(view.getContext(), 2));
         recyclerView.setAdapter(adapter);

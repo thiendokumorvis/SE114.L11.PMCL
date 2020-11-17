@@ -35,13 +35,12 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<Item, ItemAdapter.ItemV
                 .asBitmap()
                 .load(model.getImgURL())
                 .into(holder.itemImg);
-        holder.parent.setOnClickListener(new View.OnClickListener() {
+        holder.removeaddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, model.getName() + " Selected", Toast.LENGTH_SHORT).show();
+                CartFragment.addItem(new Item(model.getDesc(), model.getId(), model.getImgURL(), model.getName(), model.getPrice()));
             }
         });
-
     }
 
     @NonNull

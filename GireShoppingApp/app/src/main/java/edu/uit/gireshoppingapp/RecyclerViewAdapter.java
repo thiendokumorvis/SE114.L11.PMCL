@@ -43,10 +43,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 .asBitmap()
                 .load(items.get(position).getImgURL())
                 .into(holder.itemImg);
-        holder.parent.setOnClickListener(new View.OnClickListener() {
+        holder.removeaddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, items.get(position).getName() + " Selected", Toast.LENGTH_SHORT).show();
+                items.remove(position);
+                notifyDataSetChanged();
             }
         });
     }
@@ -76,6 +77,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             itemName = itemView.findViewById(R.id.item_name);
             itemPrice = itemView.findViewById(R.id.item_price);
             removeaddButton = itemView.findViewById(R.id.removeaddButton);
+            removeaddButton.setText("REMOVE FROM CART");
         }
     }
 }
