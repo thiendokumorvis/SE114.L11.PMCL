@@ -56,7 +56,7 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<Item, ItemAdapter.ItemV
         private ImageView itemImg;
         private TextView itemName;
         private TextView itemPrice;
-        private TextView addtocartButton;
+        private TextView removeaddButton;
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -65,7 +65,7 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<Item, ItemAdapter.ItemV
             parent = itemView.findViewById(R.id.item_view);
             itemName = itemView.findViewById(R.id.item_name);
             itemPrice = itemView.findViewById(R.id.item_price);
-            addtocartButton = itemView.findViewById(R.id.addtocartButton);
+            removeaddButton = itemView.findViewById(R.id.removeaddButton);
         }
     }
 }

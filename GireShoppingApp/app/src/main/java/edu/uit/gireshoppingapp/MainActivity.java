@@ -88,25 +88,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
-        // Setup drawer's header
-
-//        ImageView userImg;
-//        TextView username;
-//        TextView balance;
-//
-//        View navHeaderView = nv.getHeaderView(0);
-//
-//        userImg = navHeaderView.findViewById(R.id.drawer_userImg);
-//        balance = navHeaderView.findViewById(R.id.drawer_balance);
-//        username = navHeaderView.findViewById(R.id.drawer_username);
-//
-//        Glide.with(navHeaderView.getContext())
-//                .asBitmap()
-//                .load(user.getImgURL())
-//                .into(userImg);
-//        balance.setText("BALANCE: " + user.getBalance());
-//        username.setText("USERNAME: " + user.getName());
     }
 
     @Override
