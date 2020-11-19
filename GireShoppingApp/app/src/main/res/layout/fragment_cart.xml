@@ -12,7 +12,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/cart_recview">
+            android:id="@+id/cart_recview"
+            android:layout_below="@id/buyButton">
 
         </androidx.recyclerview.widget.RecyclerView>
 
@@ -21,7 +22,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/buyButton"
             android:text="BUY NOW"
-            android:layout_below="@+id/cart_recview"
             android:layout_centerHorizontal="true">
 
         </Button>

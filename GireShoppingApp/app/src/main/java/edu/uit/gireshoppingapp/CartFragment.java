@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
@@ -22,7 +23,17 @@ public class CartFragment extends Fragment {
     private static ArrayList<Item> items = new ArrayList<>();
     private RecyclerView recyclerView;
     private RecyclerViewAdapter adapter;
+    private Button buyButton;
 
+    private int getTotalPrice()
+    {
+        int sum = 0;
+        for(int i = 0; i < items.size(); i++)
+        {
+            sum += Integer.parseInt(items.get(i).getPrice());
+        }
+        return sum;
+    }
     public static void addItem(Item item)
     {
         items.add(item);
@@ -80,6 +91,17 @@ public class CartFragment extends Fragment {
             recyclerView.setLayoutManager(new GridLayoutManager(view.getContext(), 2));
             adapter = new RecyclerViewAdapter(view.getContext(), items);
             recyclerView.setAdapter(adapter);
+
+            buyButton = view.findViewById(R.id.buyButton);
+            buyButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int totalPrice = getTotalPrice();
+                    User user = MainActivity.getCurrentUser();
+                    MainActivity.setCurrentBalance(Integer.parseInt(user.getBalance()) - totalPrice);
+                    items = new ArrayList<>();
+                }
+            });
         }
 
         return view;

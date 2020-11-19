@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     {
         return user;
     }
+    public static void setCurrentBalance(int balance) { user.setBalance(Integer.toString(balance)); }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
