@@ -28,12 +28,12 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    FirebaseAuth mAuth;
     private DrawerLayout dl;
     private Toolbar tb;
     private NavigationView nv;
     private AppBarConfiguration appBarConfiguration;
-    private FirebaseDatabase database;
+    private static FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private static FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private static final String TAG = "MainActivity";
 
     private static User user;
@@ -41,7 +41,11 @@ public class MainActivity extends AppCompatActivity {
     {
         return user;
     }
-    public static void setCurrentBalance(int balance) { user.setBalance(Integer.toString(balance)); }
+    public static void setCurrentBalance(int balance) {
+        user.setBalance(Integer.toString(balance));
+        DatabaseReference ref = database.getReference("users/" + mAuth.getUid());
+        ref.setValue(user);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,13 +55,9 @@ public class MainActivity extends AppCompatActivity {
         dl = findViewById(R.id.main);
         tb = findViewById(R.id.toolbar);
         nv = findViewById(R.id.nav_view);
-        mAuth = FirebaseAuth.getInstance();
 
         // Ger user's data
-        database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("users/" + mAuth.getUid());
-
-        System.out.println("users/" + mAuth.getUid());
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override

@@ -17,6 +17,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -28,6 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText confirmPassword;
     private Button registerButton;
     private TextView goToLoginButton;
+    private FirebaseDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +84,17 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
+                            database = FirebaseDatabase.getInstance();
+                            DatabaseReference ref = database.getReference("users/" + user.getUid());
+
+                            User new_user = new User(email, "https://i.stack.imgur.com/JlSEL.png", "1000000");
+
+                            ref.setValue(new_user);
+
+                            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                            finish();
+                            startActivity(intent);
+
                             Toast.makeText(RegisterActivity.this, "Registration succeeded.",
                                     Toast.LENGTH_SHORT).show();
                         } else {

@@ -11,6 +11,12 @@ public class User {
     {
     }
 
+    public User(String name, String imgURL, String balance) {
+        this.name = name;
+        this.imgURL = imgURL;
+        this.balance = balance;
+    }
+
     public String getName() {
         return name;
     }
