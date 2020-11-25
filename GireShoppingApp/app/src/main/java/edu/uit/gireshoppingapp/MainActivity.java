@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 mAuth.signOut();
+                user = null;
                 finish();
                 startActivity(intent);
                 return true;

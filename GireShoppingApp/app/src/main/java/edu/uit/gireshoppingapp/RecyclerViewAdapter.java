@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,7 +44,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 .asBitmap()
                 .load(items.get(position).getImgURL())
                 .into(holder.itemImg);
-        holder.removeaddButton.setOnClickListener(new View.OnClickListener() {
+        holder.removeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 items.remove(position);
@@ -67,7 +68,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         private ImageView itemImg;
         private TextView itemName;
         private TextView itemPrice;
-        private TextView removeaddButton;
+        private Button removeButton;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -76,8 +77,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             parent = itemView.findViewById(R.id.item_view);
             itemName = itemView.findViewById(R.id.item_name);
             itemPrice = itemView.findViewById(R.id.item_price);
-            removeaddButton = itemView.findViewById(R.id.removeaddButton);
-            removeaddButton.setText("REMOVE FROM CART");
+            removeButton = itemView.findViewById(R.id.removeButton);
         }
     }
 }

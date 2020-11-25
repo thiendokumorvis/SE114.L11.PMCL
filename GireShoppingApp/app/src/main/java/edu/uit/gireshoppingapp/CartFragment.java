@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -36,7 +37,21 @@ public class CartFragment extends Fragment {
     }
     public static void addItem(Item item)
     {
+        if (items.size() > 0)
+        {
+            for(int i = 0; i < items.size(); i++)
+            {
+                if(items.get(i).isEqual(item))
+                {
+                    items.get(i).setNumber(Integer.toString(Integer.parseInt(items.get(i).getNumber()) + Integer.parseInt(item.getNumber())));
+                    return;
+                }
+            }
+            items.add(item);
+            return;
+        }
         items.add(item);
+        return;
     }
 
     // TODO: Rename parameter arguments, choose names that match
@@ -88,7 +103,7 @@ public class CartFragment extends Fragment {
         if (items != null)
         {
             recyclerView = view.findViewById(R.id.cart_recview);
-            recyclerView.setLayoutManager(new GridLayoutManager(view.getContext(), 2));
+            recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
             adapter = new RecyclerViewAdapter(view.getContext(), items);
             recyclerView.setAdapter(adapter);
 
@@ -96,10 +111,10 @@ public class CartFragment extends Fragment {
             buyButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int totalPrice = getTotalPrice();
-                    User user = MainActivity.getCurrentUser();
-                    MainActivity.setCurrentBalance(Integer.parseInt(user.getBalance()) - totalPrice);
-                    items = new ArrayList<>();
+//                    int totalPrice = getTotalPrice();
+//                    User user = MainActivity.getCurrentUser();
+//                    MainActivity.setCurrentBalance(Integer.parseInt(user.getBalance()) - totalPrice);
+//                    items = new ArrayList<>();
                 }
             });
         }
