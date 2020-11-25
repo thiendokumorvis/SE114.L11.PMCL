@@ -2,39 +2,50 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/item_view"
-    android:layout_margin="8dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cart_item_view"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_margin="4dp">
 
         <ImageView
-            android:id="@+id/item_image"
+            android:id="@+id/cart_item_image"
             android:layout_width="match_parent"
             android:layout_height="112dp" />
 
         <TextView
-            android:id="@+id/item_name"
+            android:id="@+id/cart_item_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/item_image"
+            android:layout_below="@+id/cart_item_image"
             android:text="NAME"
             android:textSize="16dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/item_price"
-            android:layout_below="@+id/item_name"
-            android:text="PRICE"
+            android:id="@+id/cart_number"
+            android:layout_below="@+id/cart_item_name"
+            android:text="IN CART"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cart_item_price"
+            android:layout_below="@+id/cart_number"
+            android:text="TOTAL PRICE"
             android:textSize="16dp" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/removeButton"
-            android:layout_below="@+id/item_price"
-            android:text="removeButton"
+            android:layout_below="@+id/cart_item_price"
+            android:text="REMOVE FROM CART"
             android:textSize="16dp" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

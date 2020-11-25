@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         tb = findViewById(R.id.toolbar);
         nv = findViewById(R.id.nav_view);
 
-        // Ger user's data
+        // Get user's data
         DatabaseReference ref = database.getReference("users/" + mAuth.getUid());
 
         ref.addValueEventListener(new ValueEventListener() {

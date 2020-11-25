@@ -32,7 +32,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_item_view, parent, false);
         return new ViewHolder(view);
     }
 
@@ -40,6 +40,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder: Called");
         holder.itemName.setText(items.get(position).getName());
+        holder.cartNumber.setText(items.get(position).getNumber());
         Glide.with(mContext)
                 .asBitmap()
                 .load(items.get(position).getImgURL())
@@ -68,16 +69,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         private ImageView itemImg;
         private TextView itemName;
         private TextView itemPrice;
+        private TextView cartNumber;
         private Button removeButton;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            itemImg = itemView.findViewById(R.id.item_image);
-            parent = itemView.findViewById(R.id.item_view);
-            itemName = itemView.findViewById(R.id.item_name);
-            itemPrice = itemView.findViewById(R.id.item_price);
+            itemImg = itemView.findViewById(R.id.cart_item_image);
+            parent = itemView.findViewById(R.id.cart_item_view);
+            itemName = itemView.findViewById(R.id.cart_item_name);
+            itemPrice = itemView.findViewById(R.id.cart_item_price);
             removeButton = itemView.findViewById(R.id.removeButton);
+            cartNumber = itemView.findViewById(R.id.cart_number);
         }
     }
 }

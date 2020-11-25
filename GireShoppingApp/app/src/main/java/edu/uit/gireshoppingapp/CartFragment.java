@@ -31,27 +31,46 @@ public class CartFragment extends Fragment {
         int sum = 0;
         for(int i = 0; i < items.size(); i++)
         {
-            sum += Integer.parseInt(items.get(i).getPrice());
+            sum += Integer.parseInt(items.get(i).getPrice())*Integer.parseInt(items.get(i).getNumber());
         }
         return sum;
     }
-    public static void addItem(Item item)
+
+    public static int getItemIndex(Item item)
     {
-        if (items.size() > 0)
+        if(items.size() > 0)
         {
             for(int i = 0; i < items.size(); i++)
             {
-                if(items.get(i).isEqual(item))
-                {
-                    items.get(i).setNumber(Integer.toString(Integer.parseInt(items.get(i).getNumber()) + Integer.parseInt(item.getNumber())));
-                    return;
-                }
+                if(item.getId().equals(items.get(i).getId()))
+                    return i;
             }
-            items.add(item);
-            return;
+            return -1;
         }
+        else
+        {
+            return -1;
+        }
+    }
+
+    public static void addItem(Item item)
+    {
         items.add(item);
-        return;
+    }
+
+    public static void changeNoOfItem(int number, int index)
+    {
+        items.get(index).setNumber(Integer.toString(number));
+    }
+
+    public static void removeItem(int index)
+    {
+        items.remove(index);
+    }
+
+    public static Item getItem(int index)
+    {
+        return items.get(index);
     }
 
     // TODO: Rename parameter arguments, choose names that match

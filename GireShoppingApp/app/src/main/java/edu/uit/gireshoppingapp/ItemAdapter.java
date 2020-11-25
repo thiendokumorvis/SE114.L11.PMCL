@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+
+import org.w3c.dom.Text;
 
 public class ItemAdapter extends FirebaseRecyclerAdapter<Item, ItemAdapter.ItemViewHolder> {
 
@@ -40,11 +43,11 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<Item, ItemAdapter.ItemV
                 .asBitmap()
                 .load(model.getImgURL())
                 .into(holder.itemImg);
-
+        holder.itemBrand.setText("BRAND: " + model.getBrand());
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AddToCartActivity.addTempItem(model);
+                AddToCartActivity.setItem(model.getId());
                 Intent intent = new Intent(v.getContext(), AddToCartActivity.class);
                 ((Activity)v.getContext()).finish();
                 ((Activity)v.getContext()).startActivity(intent);
@@ -64,6 +67,7 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<Item, ItemAdapter.ItemV
         private ImageView itemImg;
         private TextView itemName;
         private TextView itemPrice;
+        private TextView itemBrand;
         private Button addButton;
 
         public ItemViewHolder(@NonNull View itemView) {
@@ -74,6 +78,7 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<Item, ItemAdapter.ItemV
             itemName = itemView.findViewById(R.id.item_name);
             itemPrice = itemView.findViewById(R.id.item_price);
             addButton = itemView.findViewById(R.id.addButton);
+            itemBrand = itemView.findViewById(R.id.item_brand);
         }
     }
 }
