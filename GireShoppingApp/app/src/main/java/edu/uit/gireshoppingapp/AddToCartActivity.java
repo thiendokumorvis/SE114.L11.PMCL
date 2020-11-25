@@ -37,6 +37,8 @@ public class AddToCartActivity extends AppCompatActivity {
     private Button addTempItemToCart;
     private Button cancelAdd;
     private Button removeTempItemFromCart;
+    private TextView numberText;
+    private TextView cartNumberText;
 
     public static void setItem(String id)
     {
@@ -72,6 +74,8 @@ public class AddToCartActivity extends AppCompatActivity {
         addTempItemToCart = findViewById(R.id.add_temp_item_to_cart);
         cancelAdd = findViewById(R.id.cancel_add);
         removeTempItemFromCart = findViewById(R.id.remove_temp_item_from_cart);
+        numberText = findViewById(R.id.number_text);
+        cartNumberText = findViewById(R.id.cart_number_text);
 
         Glide.with(this)
                 .asBitmap()
@@ -91,41 +95,68 @@ public class AddToCartActivity extends AppCompatActivity {
             noOfTempItemsToAdd.setText(CartFragment.getItem(tempIndex).getNumber());
             addTempItemToCart.setText("CHANGE");
             removeTempItemFromCart.setVisibility(View.VISIBLE);
+            cartNumberText.setVisibility(View.VISIBLE);
+            cartNumberText.setText("IN CART: " + CartFragment.getItem(tempIndex).getNumber());
+            numberText.setText("NUMBER TO CHANGE:");
         }
         else
         {
-            noOfTempItemsToAdd.setText("1");
+            noOfTempItemsToAdd.setText("0");
             addTempItemToCart.setText("ADD TO CART");
             removeTempItemFromCart.setVisibility(View.GONE);
+            cartNumberText.setVisibility(View.GONE);
         }
 
         addTempItemToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int number = Integer.parseInt(noOfTempItemsToAdd.getText().toString());
-                if(number > Integer.parseInt(addToCartItem.getNumber()))
+                if(number <= 0)
                 {
-                    Toast.makeText(AddToCartActivity.this, "Only " + addToCartItem.getNumber() + "item(s) remained", Toast.LENGTH_SHORT);
+                    Toast.makeText(AddToCartActivity.this, "Number of items must be more than 0.", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                if(number > Integer.parseInt(addToCartItem.getNumber()))
+                {
+                    Toast.makeText(AddToCartActivity.this, "Only " + addToCartItem.getNumber() + " item(s) remained", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 if(tempIndex != -1)
                 {
-                    CartFragment.changeNoOfItem(number, tempIndex);
-
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference ref = database.getReference("items/item" + addToCartItem.getId());
+                    ref.setValue(new Item(addToCartItem.getDesc(), addToCartItem.getId(), addToCartItem.getImgURL(), addToCartItem.getName(), addToCartItem.getPrice(), addToCartItem.getBrand(), Integer.toString(Integer.parseInt(addToCartItem.getNumber()) - number + Integer.parseInt(CartFragment.getItem(tempIndex).getNumber()))));
 
-                    ref.setValue(new Item(addToCartItem.getDesc(), addToCartItem.getId(), addToCartItem.getImgURL(), addToCartItem.getName(), addToCartItem.getPrice(), addToCartItem.getBrand(), Integer.toString(Integer.parseInt(addToCartItem.getNumber()) - number)));
+                    CartFragment.changeNoOfItem(number, tempIndex);
                 }
                 else
                 {
-                    CartFragment.addItem(new Item(addToCartItem.getDesc(), addToCartItem.getId(), addToCartItem.getImgURL(), addToCartItem.getName(), addToCartItem.getPrice(), addToCartItem.getBrand(), Integer.toString(number)));
-
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference ref = database.getReference("items/item" + addToCartItem.getId());
-
                     ref.setValue(new Item(addToCartItem.getDesc(), addToCartItem.getId(), addToCartItem.getImgURL(), addToCartItem.getName(), addToCartItem.getPrice(), addToCartItem.getBrand(), Integer.toString(Integer.parseInt(addToCartItem.getNumber()) - number)));
+
+                    CartFragment.addItem(new Item(addToCartItem.getDesc(), addToCartItem.getId(), addToCartItem.getImgURL(), addToCartItem.getName(), addToCartItem.getPrice(), addToCartItem.getBrand(), Integer.toString(number)));
                 }
+
+                Intent intent = new Intent(AddToCartActivity.this, MainActivity.class);
+                finish();
+                startActivity(intent);
+            }
+        });
+
+        removeTempItemFromCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference ref = database.getReference("items/item" + addToCartItem.getId());
+                ref.setValue(new Item(addToCartItem.getDesc(), addToCartItem.getId(), addToCartItem.getImgURL(), addToCartItem.getName(), addToCartItem.getPrice(), addToCartItem.getBrand(), Integer.toString(Integer.parseInt(addToCartItem.getNumber()) + Integer.parseInt(CartFragment.getItem(tempIndex).getNumber()))));
+
+                CartFragment.removeItem(CartFragment.getItemIndex(addToCartItem));
+                Intent intent = new Intent(AddToCartActivity.this, MainActivity.class);
+                finish();
+                startActivity(intent);
             }
         });
 

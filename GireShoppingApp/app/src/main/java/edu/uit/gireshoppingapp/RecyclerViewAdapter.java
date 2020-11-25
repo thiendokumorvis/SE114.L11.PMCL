@@ -39,8 +39,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder: Called");
-        holder.itemName.setText(items.get(position).getName());
-        holder.cartNumber.setText(items.get(position).getNumber());
+        holder.itemName.setText("NAME: " + items.get(position).getName());
+        holder.cartNumber.setText("IN CART: " + items.get(position).getNumber());
+        int totalPrice = Integer.parseInt(items.get(position).getNumber()) * Integer.parseInt(items.get(position).getPrice());
+        holder.cartItemPrice.setText("TOTAL PRICE FOR THIS ITEM: " + Integer.toString(totalPrice));
         Glide.with(mContext)
                 .asBitmap()
                 .load(items.get(position).getImgURL())
@@ -71,6 +73,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         private TextView itemPrice;
         private TextView cartNumber;
         private Button removeButton;
+        private TextView cartItemPrice;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -81,6 +84,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             itemPrice = itemView.findViewById(R.id.cart_item_price);
             removeButton = itemView.findViewById(R.id.removeButton);
             cartNumber = itemView.findViewById(R.id.cart_number);
+            cartItemPrice = itemView.findViewById(R.id.cart_item_price);
         }
     }
 }

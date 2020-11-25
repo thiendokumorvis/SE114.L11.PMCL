@@ -53,6 +53,21 @@
             android:id="@+id/temp_item_number"
             android:textSize="20dp"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cart_number_text"
+            android:text="IN CART: "
+            android:visibility="gone"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/number_text"
+            android:text="NUMBER TO ADD:"
+            android:textSize="20dp"/>
+
         <EditText
             android:id="@+id/number_of_temp_items_to_add"
             android:layout_width="wrap_content"
