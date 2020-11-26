@@ -127,7 +127,7 @@ public class AddToCartActivity extends AppCompatActivity {
                 {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference ref = database.getReference("items/item" + addToCartItem.getId());
-                    ref.setValue(new Item(addToCartItem.getDesc(), addToCartItem.getId(), addToCartItem.getImgURL(), addToCartItem.getName(), addToCartItem.getPrice(), addToCartItem.getBrand(), Integer.toString(Integer.parseInt(addToCartItem.getNumber()) - number + Integer.parseInt(CartFragment.getItem(tempIndex).getNumber()))));
+                    ref.getRef().child("number").setValue(Integer.toString(Integer.parseInt(addToCartItem.getNumber()) - number + Integer.parseInt(CartFragment.getItem(tempIndex).getNumber())));
 
                     CartFragment.changeNoOfItem(number, tempIndex);
                 }
@@ -135,11 +135,12 @@ public class AddToCartActivity extends AppCompatActivity {
                 {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference ref = database.getReference("items/item" + addToCartItem.getId());
-                    ref.setValue(new Item(addToCartItem.getDesc(), addToCartItem.getId(), addToCartItem.getImgURL(), addToCartItem.getName(), addToCartItem.getPrice(), addToCartItem.getBrand(), Integer.toString(Integer.parseInt(addToCartItem.getNumber()) - number)));
+                    ref.getRef().child("number").setValue(Integer.toString(Integer.parseInt(addToCartItem.getNumber()) - number));
 
                     CartFragment.addItem(new Item(addToCartItem.getDesc(), addToCartItem.getId(), addToCartItem.getImgURL(), addToCartItem.getName(), addToCartItem.getPrice(), addToCartItem.getBrand(), Integer.toString(number)));
                 }
 
+                addToCartItem = new Item();
                 Intent intent = new Intent(AddToCartActivity.this, MainActivity.class);
                 finish();
                 startActivity(intent);
@@ -151,9 +152,10 @@ public class AddToCartActivity extends AppCompatActivity {
             public void onClick(View v) {
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference ref = database.getReference("items/item" + addToCartItem.getId());
-                ref.setValue(new Item(addToCartItem.getDesc(), addToCartItem.getId(), addToCartItem.getImgURL(), addToCartItem.getName(), addToCartItem.getPrice(), addToCartItem.getBrand(), Integer.toString(Integer.parseInt(addToCartItem.getNumber()) + Integer.parseInt(CartFragment.getItem(tempIndex).getNumber()))));
+                ref.getRef().child("number").setValue(Integer.toString(Integer.parseInt(addToCartItem.getNumber()) + Integer.parseInt(CartFragment.getItem(tempIndex).getNumber())));
 
                 CartFragment.removeItem(CartFragment.getItemIndex(addToCartItem));
+                addToCartItem = new Item();
                 Intent intent = new Intent(AddToCartActivity.this, MainActivity.class);
                 finish();
                 startActivity(intent);
@@ -163,6 +165,7 @@ public class AddToCartActivity extends AppCompatActivity {
         cancelAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                addToCartItem = new Item();
                 Intent intent = new Intent(AddToCartActivity.this, MainActivity.class);
                 finish();
                 startActivity(intent);

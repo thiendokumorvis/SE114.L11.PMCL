@@ -40,12 +40,5 @@
             android:layout_below="@+id/cart_number"
             android:text="TOTAL PRICE"
             android:textSize="16dp" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/removeButton"
-            android:layout_below="@+id/cart_item_price"
-            android:text="REMOVE FROM CART"
-            android:textSize="16dp" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
