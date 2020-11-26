@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText loginEmail;
     private EditText loginPassword;
     private Button loginButton;
-    private TextView goToRegisterButton;
+    private Button goToRegisterButton;
     private ProgressBar loginProgressBar;
 
     @Override
