@@ -125,18 +125,10 @@ public class AddToCartActivity extends AppCompatActivity {
 
                 if(tempIndex != -1)
                 {
-                    FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference ref = database.getReference("items/item" + addToCartItem.getId());
-                    ref.getRef().child("number").setValue(Integer.toString(Integer.parseInt(addToCartItem.getNumber()) - number + Integer.parseInt(CartFragment.getItem(tempIndex).getNumber())));
-
                     CartFragment.changeNoOfItem(number, tempIndex);
                 }
                 else
                 {
-                    FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference ref = database.getReference("items/item" + addToCartItem.getId());
-                    ref.getRef().child("number").setValue(Integer.toString(Integer.parseInt(addToCartItem.getNumber()) - number));
-
                     CartFragment.addItem(new Item(addToCartItem.getDesc(), addToCartItem.getId(), addToCartItem.getImgURL(), addToCartItem.getName(), addToCartItem.getPrice(), addToCartItem.getBrand(), Integer.toString(number)));
                 }
 
@@ -150,10 +142,6 @@ public class AddToCartActivity extends AppCompatActivity {
         removeTempItemFromCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference ref = database.getReference("items/item" + addToCartItem.getId());
-                ref.getRef().child("number").setValue(Integer.toString(Integer.parseInt(addToCartItem.getNumber()) + Integer.parseInt(CartFragment.getItem(tempIndex).getNumber())));
-
                 CartFragment.removeItem(CartFragment.getItemIndex(addToCartItem));
                 addToCartItem = new Item();
                 Intent intent = new Intent(AddToCartActivity.this, MainActivity.class);
