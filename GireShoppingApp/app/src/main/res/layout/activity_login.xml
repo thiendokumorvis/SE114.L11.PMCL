@@ -66,11 +66,9 @@
                 <ProgressBar
                     android:id="@+id/loginProgressBar"
                     style="?android:attr/progressBarStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:visibility="gone"
-                    android:layout_below="@+id/goToLoginButton"
                     android:layout_centerHorizontal="true" />
 
                 <Button
