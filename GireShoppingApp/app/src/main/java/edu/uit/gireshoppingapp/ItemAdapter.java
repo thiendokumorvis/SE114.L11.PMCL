@@ -49,6 +49,7 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<Item, ItemAdapter.ItemV
             public void onClick(View v) {
                 AddToCartActivity.setItem(model.getId());
                 Intent intent = new Intent(v.getContext(), AddToCartActivity.class);
+                ((Activity)v.getContext()).finish();
                 ((Activity)v.getContext()).startActivity(intent);
             }
         });
