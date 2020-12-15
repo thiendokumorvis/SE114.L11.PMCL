@@ -134,8 +134,8 @@ public class AddToCartActivity extends AppCompatActivity {
 
                 addToCartItem = new Item();
                 Intent intent = new Intent(AddToCartActivity.this, MainActivity.class);
-                finish();
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -145,8 +145,8 @@ public class AddToCartActivity extends AppCompatActivity {
                 CartFragment.removeItem(CartFragment.getItemIndex(addToCartItem));
                 addToCartItem = new Item();
                 Intent intent = new Intent(AddToCartActivity.this, MainActivity.class);
-                finish();
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -155,8 +155,8 @@ public class AddToCartActivity extends AppCompatActivity {
             public void onClick(View v) {
                 addToCartItem = new Item();
                 Intent intent = new Intent(AddToCartActivity.this, MainActivity.class);
-                finish();
                 startActivity(intent);
+                finish();
             }
         });
     }

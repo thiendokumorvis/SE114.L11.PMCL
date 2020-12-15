@@ -63,8 +63,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                finish();
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -81,8 +81,8 @@ public class LoginActivity extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                             loginProgressBar.setVisibility(View.GONE);
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            finish();
                             startActivity(intent);
+                            finish();
                         } else {
                             Toast.makeText(LoginActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();

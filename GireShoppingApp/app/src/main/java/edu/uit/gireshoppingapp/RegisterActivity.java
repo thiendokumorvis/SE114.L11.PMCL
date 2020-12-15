@@ -70,8 +70,8 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                finish();
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -92,8 +92,8 @@ public class RegisterActivity extends AppCompatActivity {
                             ref.setValue(new_user);
 
                             Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-                            finish();
                             startActivity(intent);
+                            finish();
 
                             Toast.makeText(RegisterActivity.this, "Registration succeeded.",
                                     Toast.LENGTH_SHORT).show();
