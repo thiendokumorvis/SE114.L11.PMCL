@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.navigation.NavigationView;
@@ -32,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar tb;
     private NavigationView nv;
     private AppBarConfiguration appBarConfiguration;
-    private static FirebaseDatabase database = FirebaseDatabase.getInstance();
-    private static FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private static FirebaseDatabase database;
+    private static FirebaseAuth mAuth;
     private static final String TAG = "MainActivity";
 
     private static User user;
@@ -56,19 +57,21 @@ public class MainActivity extends AppCompatActivity {
         tb = findViewById(R.id.toolbar);
         nv = findViewById(R.id.nav_view);
 
-        // Get user's data
-        DatabaseReference ref = database.getReference("users/" + mAuth.getUid());
+        database = FirebaseDatabase.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
+        // Get user's data
+        DatabaseReference ref = database.getReference("users/" + mAuth.getUid().toString());
+        // Toast.makeText(MainActivity.this, mAuth.getUid(), Toast.LENGTH_SHORT).show();
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 user = dataSnapshot.getValue(User.class);
-                // Log.i(TAG, user.toString());
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                // System.out.println("The read failed: " + databaseError.getCode());
+                Toast.makeText(MainActivity.this, "The read failed: " + databaseError.getCode(), Toast.LENGTH_SHORT).show();
             }
         });
 

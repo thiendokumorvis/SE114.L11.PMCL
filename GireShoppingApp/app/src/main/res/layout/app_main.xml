@@ -13,11 +13,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/toolbar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-            <androidx.appcompat.widget.SearchView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:id="@+id/search_bar"/>
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 

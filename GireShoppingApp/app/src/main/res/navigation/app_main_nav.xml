@@ -8,16 +8,16 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="edu.uit.gireshoppingapp.HomeFragment"
-        android:label="fragment_home"
+        android:label="Home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/nav_cart"
         android:name="edu.uit.gireshoppingapp.CartFragment"
-        android:label="fragment_cart"
+        android:label="Cart"
         tools:layout="@layout/fragment_cart" />
     <fragment
         android:id="@+id/nav_dashboard"
         android:name="edu.uit.gireshoppingapp.DashboardFragment"
-        android:label="fragment_dashboard"
+        android:label="Dashboard"
         tools:layout="@layout/fragment_dashboard" />
 </navigation>

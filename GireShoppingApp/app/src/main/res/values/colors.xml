@@ -8,4 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="light_blue">#adcae6</color>
+    <color name="login_button_color">#FFF01A</color>
+    <color name="reg_button_color">#E68F1E</color>
 </resources>
