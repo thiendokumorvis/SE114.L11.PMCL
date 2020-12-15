@@ -24,7 +24,6 @@ public class CartFragment extends Fragment {
     private static ArrayList<Item> items = new ArrayList<>();
     private RecyclerView recyclerView;
     private RecyclerViewAdapter adapter;
-    private Button buyButton;
 
     private int getTotalPrice()
     {
@@ -125,17 +124,6 @@ public class CartFragment extends Fragment {
             recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
             adapter = new RecyclerViewAdapter(view.getContext(), items);
             recyclerView.setAdapter(adapter);
-
-            buyButton = view.findViewById(R.id.buyButton);
-            buyButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-//                    int totalPrice = getTotalPrice();
-//                    User user = MainActivity.getCurrentUser();
-//                    MainActivity.setCurrentBalance(Integer.parseInt(user.getBalance()) - totalPrice);
-//                    items = new ArrayList<>();
-                }
-            });
         }
 
         return view;
