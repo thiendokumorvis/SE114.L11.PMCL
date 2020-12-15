@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     private static FirebaseDatabase database;
     private static FirebaseAuth mAuth;
     private static final String TAG = "MainActivity";
+    private long backPressedTime;
+    private Toast backToast;
 
     private static User user;
     public static User getCurrentUser()
@@ -108,5 +110,18 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.fragment);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            backToast.cancel();
+            super.onBackPressed();
+            return;
+        } else {
+            backToast = Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT);
+            backToast.show();
+        }
+        backPressedTime = System.currentTimeMillis();
     }
 }

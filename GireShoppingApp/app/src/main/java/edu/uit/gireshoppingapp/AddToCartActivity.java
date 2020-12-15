@@ -101,7 +101,7 @@ public class AddToCartActivity extends AppCompatActivity {
         }
         else
         {
-            noOfTempItemsToAdd.setText("0");
+            noOfTempItemsToAdd.setText("1");
             addTempItemToCart.setText("ADD TO CART");
             removeTempItemFromCart.setVisibility(View.GONE);
             cartNumberText.setVisibility(View.GONE);
