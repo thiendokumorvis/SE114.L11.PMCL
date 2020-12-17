@@ -7,20 +7,37 @@
     tools:context=".LoginActivity"
     android:background="@drawable/background">
 
-    <ProgressBar
-        android:id="@+id/loginProgressBar"
-        style="?android:attr/progressBarStyle"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/loading_login_screen"
+        android:background="@drawable/background"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:src="@drawable/login_icon"
+            android:id="@+id/loading_login_screen_icon"
+            android:layout_centerInParent="true"
+            android:layout_margin="32dp"/>
+
+        <ProgressBar
+            android:id="@+id/loginProgressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loading_login_screen_icon" />
+
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:orientation="vertical"
-        android:background="@null">
+        android:background="@null"
+        android:id="@+id/login_screen">
 
         <ImageView
             android:id="@+id/loginImage"

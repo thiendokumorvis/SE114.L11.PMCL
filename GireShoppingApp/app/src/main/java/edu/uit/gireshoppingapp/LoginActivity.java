@@ -3,12 +3,16 @@ package edu.uit.gireshoppingapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.inputmethodservice.Keyboard;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +30,9 @@ public class LoginActivity extends AppCompatActivity {
     private EditText loginPassword;
     private Button loginButton;
     private Button goToRegisterButton;
-    private ProgressBar loginProgressBar;
+    // private ProgressBar loginProgressBar;
+    private RelativeLayout login_screen;
+    private RelativeLayout loading_login_screen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +43,22 @@ public class LoginActivity extends AppCompatActivity {
         loginPassword = findViewById(R.id.loginPassword);
         loginButton = findViewById(R.id.loginButton);
         goToRegisterButton = findViewById(R.id.goToRegisterButton);
-        loginProgressBar = findViewById(R.id.loginProgressBar);
+
+        login_screen = findViewById(R.id.login_screen);
+        loading_login_screen = findViewById(R.id.loading_login_screen);
+
         mAuth = FirebaseAuth.getInstance();
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginProgressBar.setVisibility(View.VISIBLE);
+                // loginProgressBar.setVisibility(View.VISIBLE);
+
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+
+                loading_login_screen.setVisibility(View.VISIBLE);
+                login_screen.setVisibility(View.GONE);
 
                 String email = loginEmail.getText().toString();
                 String password = loginPassword.getText().toString();
@@ -52,7 +67,9 @@ public class LoginActivity extends AppCompatActivity {
                 {
                     Toast.makeText(LoginActivity.this, "Email and password must be more than 8 characters.",
                             Toast.LENGTH_SHORT).show();
-                    loginProgressBar.setVisibility(View.GONE);
+
+                    loading_login_screen.setVisibility(View.GONE);
+                    login_screen.setVisibility(View.VISIBLE);
                 }
                 else
                     loginButtonOnPress(email, password);
@@ -79,14 +96,19 @@ public class LoginActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(LoginActivity.this, "Authentication succeeded.",
                                     Toast.LENGTH_SHORT).show();
-                            loginProgressBar.setVisibility(View.GONE);
+
+                            loading_login_screen.setVisibility(View.GONE);
+                            login_screen.setVisibility(View.VISIBLE);
+
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
                             finish();
                         } else {
                             Toast.makeText(LoginActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            loginProgressBar.setVisibility(View.GONE);
+
+                            loading_login_screen.setVisibility(View.GONE);
+                            login_screen.setVisibility(View.VISIBLE);
                         }
                     }
                 });

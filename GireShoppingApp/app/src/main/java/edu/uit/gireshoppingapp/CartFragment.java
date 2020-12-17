@@ -1,5 +1,7 @@
 package edu.uit.gireshoppingapp;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 
 /**
@@ -21,11 +25,23 @@ import java.util.ArrayList;
  */
 public class CartFragment extends Fragment {
 
+    public static String getListOfItems;
     private static ArrayList<Item> items = new ArrayList<>();
     private RecyclerView recyclerView;
     private RecyclerViewAdapter adapter;
+    private FloatingActionButton buyButton;
 
-    private int getTotalPrice()
+    public static String getListOfItems()
+    {
+        String temp = "";
+        for(int i = 0; i < items.size(); i++)
+        {
+            temp = temp + items.get(i).getName() + " (" + items.get(i).getNumber() + ")" + ", ";
+        }
+        return temp.substring(0, temp.length()-2);
+    }
+
+    public static int getTotalPrice()
     {
         int sum = 0;
         for(int i = 0; i < items.size(); i++)
@@ -117,6 +133,7 @@ public class CartFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_cart, container, false);
+        buyButton = view.findViewById(R.id.buyButton);
 
         if (items != null)
         {
@@ -125,6 +142,14 @@ public class CartFragment extends Fragment {
             adapter = new RecyclerViewAdapter(view.getContext(), items);
             recyclerView.setAdapter(adapter);
         }
+        buyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), CheckOutActivity.class);
+                ((Activity)v.getContext()).startActivity(intent);
+                ((Activity)v.getContext()).finish();
+            }
+        });
 
         return view;
     }
