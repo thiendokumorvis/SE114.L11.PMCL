@@ -2,13 +2,17 @@ package edu.uit.gireshoppingapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +35,8 @@ public class RegisterActivity extends AppCompatActivity {
     private Button registerButton;
     private TextView goToLoginButton;
     private FirebaseDatabase database;
+    private RelativeLayout loading_reg_screen;
+    private CardView reg_screen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +50,21 @@ public class RegisterActivity extends AppCompatActivity {
         registerButton = findViewById(R.id.registerButton);
         goToLoginButton = findViewById(R.id.goToLoginButton);
 
+        reg_screen = findViewById(R.id.reg_screen);
+        loading_reg_screen = findViewById(R.id.loading_reg_screen);
+
         mAuth = FirebaseAuth.getInstance();
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+
+                loading_reg_screen.setVisibility(View.VISIBLE);
+                reg_screen.setVisibility(View.GONE);
+
                 String re = registerEmail.getText().toString();
                 String ce = confirmEmail.getText().toString();
                 String rp = registerPassword.getText().toString();
@@ -58,6 +74,9 @@ public class RegisterActivity extends AppCompatActivity {
                 {
                     Toast.makeText(RegisterActivity.this, "Email or password is invalid.",
                             Toast.LENGTH_SHORT).show();
+
+                    loading_reg_screen.setVisibility(View.GONE);
+                    reg_screen.setVisibility(View.VISIBLE);
                 }
                 else
                 {
@@ -100,6 +119,9 @@ public class RegisterActivity extends AppCompatActivity {
                         } else {
                             Toast.makeText(RegisterActivity.this, "Registration failed.",
                                     Toast.LENGTH_SHORT).show();
+
+                            loading_reg_screen.setVisibility(View.GONE);
+                            reg_screen.setVisibility(View.VISIBLE);
                         }
                     }
                 });

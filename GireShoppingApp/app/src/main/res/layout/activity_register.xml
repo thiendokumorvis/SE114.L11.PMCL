@@ -6,13 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity"
     android:background="@drawable/background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/loading_reg_screen"
+        android:background="@drawable/background"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:src="@drawable/login_icon"
+            android:id="@+id/loading_reg_screen_icon"
+            android:layout_centerInParent="true"
+            android:layout_margin="32dp"/>
+
+        <ProgressBar
+            android:id="@+id/regProgressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loading_reg_screen_icon" />
+
+    </RelativeLayout>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         app:cardCornerRadius="16dp"
-        android:layout_below="@+id/loginImage"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"
+        android:id="@+id/reg_screen">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -27,16 +52,6 @@
                 android:hint="Email" />
 
             <EditText
-                android:id="@+id/registerPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:ems="10"
-                android:inputType="textPassword"
-                android:hint="Password"
-                android:layout_below="@id/registerEmail"/>
-
-            <EditText
                 android:id="@+id/confirmEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,7 +59,17 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:hint="Confirm email"
-                android:layout_below="@+id/registerPassword"/>
+                android:layout_below="@+id/registerEmail"/>
+
+            <EditText
+                android:id="@+id/registerPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:hint="Password"
+                android:layout_below="@id/confirmEmail"/>
 
             <EditText
                 android:id="@+id/confirmPassword"
@@ -54,7 +79,7 @@
                 android:ems="10"
                 android:inputType="textPassword"
                 android:hint="Confirm password"
-                android:layout_below="@id/confirmEmail"/>
+                android:layout_below="@id/registerPassword"/>
 
             <Button
                 android:id="@+id/registerButton"
