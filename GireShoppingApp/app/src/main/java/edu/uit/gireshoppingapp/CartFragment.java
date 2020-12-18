@@ -34,6 +34,11 @@ public class CartFragment extends Fragment {
     private RelativeLayout emptyCartScreen;
     private RelativeLayout cartScreen;
 
+    public static void buyFunction()
+    {
+        items = new ArrayList<>();
+    }
+
     public static String getListOfItems()
     {
         String temp = "";
