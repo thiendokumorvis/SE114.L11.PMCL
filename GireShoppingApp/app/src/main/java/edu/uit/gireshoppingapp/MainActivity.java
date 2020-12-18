@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Setting up toolbar and fragments
         setSupportActionBar(tb);
-        appBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_dashboard, R.id.nav_cart).setDrawerLayout(dl).build();
+        appBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_dashboard, R.id.nav_cart, R.id.nav_voucher).setDrawerLayout(dl).build();
         NavController nc = Navigation.findNavController(this, R.id.fragment);
         NavigationUI.setupActionBarWithNavController(this, nc, appBarConfiguration);
         NavigationUI.setupWithNavController(nv, nc);
