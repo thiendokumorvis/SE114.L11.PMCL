@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -30,6 +31,8 @@ public class CartFragment extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerViewAdapter adapter;
     private FloatingActionButton buyButton;
+    private RelativeLayout emptyCartScreen;
+    private RelativeLayout cartScreen;
 
     public static String getListOfItems()
     {
@@ -134,13 +137,23 @@ public class CartFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_cart, container, false);
         buyButton = view.findViewById(R.id.buyButton);
+        emptyCartScreen = view.findViewById(R.id.empty_cart_screen);
+        cartScreen = view.findViewById(R.id.cart_screen);
 
-        if (items != null)
+        if (items.size() > 0)
         {
             recyclerView = view.findViewById(R.id.cart_recview);
             recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
             adapter = new RecyclerViewAdapter(view.getContext(), items);
             recyclerView.setAdapter(adapter);
+
+            emptyCartScreen.setVisibility(View.GONE);
+            cartScreen.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            emptyCartScreen.setVisibility(View.VISIBLE);
+            cartScreen.setVisibility(View.GONE);
         }
         buyButton.setOnClickListener(new View.OnClickListener() {
             @Override
