@@ -36,7 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
     private TextView goToLoginButton;
     private FirebaseDatabase database;
     private RelativeLayout loading_reg_screen;
-    private CardView reg_screen;
+    private RelativeLayout reg_screen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

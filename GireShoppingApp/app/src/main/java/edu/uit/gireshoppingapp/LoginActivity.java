@@ -22,6 +22,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import org.w3c.dom.Text;
+
 public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
@@ -29,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText loginEmail;
     private EditText loginPassword;
     private Button loginButton;
-    private Button goToRegisterButton;
+    private TextView goToRegisterButton;
     // private ProgressBar loginProgressBar;
     private RelativeLayout login_screen;
     private RelativeLayout loading_login_screen;
