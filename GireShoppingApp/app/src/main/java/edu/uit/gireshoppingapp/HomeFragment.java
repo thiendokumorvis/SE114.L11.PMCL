@@ -27,8 +27,11 @@ import java.util.ArrayList;
 public class HomeFragment extends Fragment {
 
     private RecyclerView recyclerView;
-    private ItemAdapter adapter;
-    private DatabaseReference mbase;
+    private RecyclerView bestSellingRecView;
+    private ItemAdapter adapter1;
+    private DatabaseReference mbase1;
+    private ItemAdapter adapter2;
+    private DatabaseReference mbase2;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -76,16 +79,29 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = view.findViewById(R.id.featured_recview);
-        mbase = FirebaseDatabase.getInstance().getReference("items");
+        mbase1 = FirebaseDatabase.getInstance().getReference("items");
 
         FirebaseRecyclerOptions<Item> items
                 = new FirebaseRecyclerOptions.Builder<Item>()
-                .setQuery(mbase, Item.class)
+                .setQuery(mbase1, Item.class)
                 .build();
 
-        adapter = new ItemAdapter(items, view.getContext());
+        adapter1 = new ItemAdapter(items, view.getContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext(), LinearLayout.HORIZONTAL, false));
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter1);
+
+
+        bestSellingRecView = view.findViewById(R.id.best_selling_recview);
+        mbase2 = FirebaseDatabase.getInstance().getReference("best_selling_items");
+
+        FirebaseRecyclerOptions<Item> best_selling
+                = new FirebaseRecyclerOptions.Builder<Item>()
+                .setQuery(mbase2, Item.class)
+                .build();
+
+        adapter2 = new ItemAdapter(best_selling, view.getContext());
+        bestSellingRecView.setLayoutManager(new LinearLayoutManager(view.getContext(), LinearLayout.HORIZONTAL, false));
+        bestSellingRecView.setAdapter(adapter2);
 
         return view;
     }
@@ -93,7 +109,8 @@ public class HomeFragment extends Fragment {
     @Override public void onStart()
     {
         super.onStart();
-        adapter.startListening();
+        adapter1.startListening();
+        adapter2.startListening();
     }
 
     // Function to tell the app to stop getting
@@ -101,6 +118,7 @@ public class HomeFragment extends Fragment {
     @Override public void onStop()
     {
         super.onStop();
-        adapter.stopListening();
+        adapter1.stopListening();
+        adapter2.stopListening();
     }
 }
