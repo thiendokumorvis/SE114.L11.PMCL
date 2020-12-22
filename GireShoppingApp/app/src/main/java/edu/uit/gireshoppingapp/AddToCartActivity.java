@@ -31,8 +31,6 @@ public class AddToCartActivity extends AppCompatActivity {
     private TextView tempItemPrice;
     private TextView tempItemDesc;
     private TextView tempItemNumber;
-    private Button minusTempItem;
-    private Button plusTempItem;
     private EditText noOfTempItemsToAdd;
     private Button addTempItemToCart;
     private Button cancelAdd;
@@ -82,11 +80,11 @@ public class AddToCartActivity extends AppCompatActivity {
                 .load(addToCartItem.getImgURL())
                 .into(tempItemImage);
         tempItemId.setText("ID: " + addToCartItem.getId());
-        tempItemName.setText("NAME: " + addToCartItem.getName());
-        tempItemBrand.setText("BRAND: " + addToCartItem.getBrand());
-        tempItemPrice.setText("PRICE: " + addToCartItem.getPrice());
-        tempItemDesc.setText("DESCRIPTION: " + addToCartItem.getDesc());
-        tempItemNumber.setText("IN STOCK: " + addToCartItem.getNumber());
+        tempItemName.setText(addToCartItem.getName());
+        tempItemBrand.setText("Brand: " + addToCartItem.getBrand());
+        tempItemPrice.setText("$" + addToCartItem.getPrice());
+        tempItemDesc.setText("Description: \n" + addToCartItem.getDesc());
+        tempItemNumber.setText("In stock: " + addToCartItem.getNumber());
 
         int tempIndex = CartFragment.getItemIndex(addToCartItem);
 
@@ -96,8 +94,8 @@ public class AddToCartActivity extends AppCompatActivity {
             addTempItemToCart.setText("CHANGE");
             removeTempItemFromCart.setVisibility(View.VISIBLE);
             cartNumberText.setVisibility(View.VISIBLE);
-            cartNumberText.setText("IN CART: " + CartFragment.getItem(tempIndex).getNumber());
-            numberText.setText("NUMBER TO CHANGE:");
+            cartNumberText.setText("In cart: " + CartFragment.getItem(tempIndex).getNumber());
+            numberText.setText("Number to change:");
         }
         else
         {

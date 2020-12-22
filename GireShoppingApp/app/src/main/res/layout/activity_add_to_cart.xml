@@ -4,69 +4,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddToCartActivity"
-    android:layout_margin="4dp">
+    tools:context=".AddToCartActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginHorizontal="16dp">
 
-        <ImageView
+        <Button
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:id="@+id/cancel_add"
+            android:background="@drawable/back_icon"
+            app:backgroundTint="@color/black"
+            android:layout_marginVertical="8dp"/>
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/temp_item_image"/>
+            app:cardCornerRadius="16dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/temp_item_image"/>
+
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/temp_item_id"
-            android:textSize="20dp"/>
+            android:id="@+id/temp_item_name" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/temp_item_name"
-            android:textSize="32dp"/>
+            android:id="@+id/temp_item_price" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/temp_item_brand"
-            android:textSize="20dp"/>
+            android:id="@+id/temp_item_brand" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/temp_item_price"
-            android:textSize="20dp"/>
+            android:id="@+id/temp_item_desc" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/temp_item_desc"
-            android:textSize="20dp"/>
+            android:id="@+id/temp_item_id" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/temp_item_number"
-            android:textSize="20dp"/>
+            android:id="@+id/temp_item_number" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/cart_number_text"
-            android:text="IN CART: "
-            android:visibility="gone"
-            android:textSize="20dp"/>
+            android:text="In cart: "
+            android:visibility="gone" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/number_text"
-            android:text="NUMBER TO ADD:"
-            android:textSize="20dp"/>
+            android:text="Number to add:" />
 
         <EditText
             android:id="@+id/number_of_temp_items_to_add"
@@ -74,25 +81,32 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:text="1"
-            android:textSize="20dp"/>
+            android:text="1" />
 
-        <Button
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/add_temp_item_to_cart"
-            android:text="ADD TO CART" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/remove_temp_item_from_cart"
-            android:text="REMOVE THIS ITEM FROM CART"
-            android:visibility="gone" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/cancel_add"
-            android:text="CANCEL" />
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/add_temp_item_to_cart"
+                android:text="ADD"
+                android:layout_weight="1"
+                android:backgroundTint="@color/button_color"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/remove_temp_item_from_cart"
+                android:text="REMOVE"
+                android:layout_toRightOf="@+id/add_temp_item_to_cart"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:visibility="gone" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

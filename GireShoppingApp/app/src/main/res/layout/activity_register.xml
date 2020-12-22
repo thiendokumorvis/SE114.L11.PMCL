@@ -109,7 +109,7 @@
                 android:layout_marginTop="8dp"
                 android:text="REGISTER"
                 android:layout_below="@+id/confirmPassword"
-                android:backgroundTint="@color/purple_200" />
+                android:backgroundTint="@color/button_color" />
 
             <TextView
                 android:layout_centerHorizontal="true"

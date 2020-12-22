@@ -94,7 +94,7 @@
                 android:text="LOGIN"
                 android:layout_below="@+id/loginPassword"
                 android:layout_centerHorizontal="true"
-                android:backgroundTint="@color/purple_200" />
+                android:backgroundTint="@color/button_color" />
             <TextView
                 android:id="@+id/goToRegisterButton"
                 android:layout_width="wrap_content"
