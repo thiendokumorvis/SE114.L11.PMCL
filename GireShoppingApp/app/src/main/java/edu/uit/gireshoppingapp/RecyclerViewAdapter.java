@@ -46,10 +46,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder: Called");
-        holder.itemName.setText("NAME: " + items.get(position).getName());
-        holder.cartNumber.setText("IN CART: " + items.get(position).getNumber());
+        holder.itemName.setText(items.get(position).getName());
+        holder.cartNumber.setText("In cart: " + items.get(position).getNumber());
         int totalPrice = Integer.parseInt(items.get(position).getNumber()) * Integer.parseInt(items.get(position).getPrice());
-        holder.cartItemPrice.setText("TOTAL PRICE FOR THIS ITEM: " + Integer.toString(totalPrice));
+        holder.cartItemPrice.setText("Total price: " + Integer.toString(totalPrice));
         Glide.with(mContext)
                 .asBitmap()
                 .load(items.get(position).getImgURL())

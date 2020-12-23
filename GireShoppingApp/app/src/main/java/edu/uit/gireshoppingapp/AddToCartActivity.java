@@ -41,7 +41,7 @@ public class AddToCartActivity extends AppCompatActivity {
     public static void setItem(String id)
     {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = database.getReference("items/item" + id);
+        DatabaseReference ref = database.getReference("all_items/item" + id);
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -83,7 +83,7 @@ public class AddToCartActivity extends AppCompatActivity {
         tempItemName.setText(addToCartItem.getName());
         tempItemBrand.setText("Brand: " + addToCartItem.getBrand());
         tempItemPrice.setText("$" + addToCartItem.getPrice());
-        tempItemDesc.setText("Description: \n" + addToCartItem.getDesc());
+        tempItemDesc.setText(addToCartItem.getDesc());
         tempItemNumber.setText("In stock: " + addToCartItem.getNumber());
 
         int tempIndex = CartFragment.getItemIndex(addToCartItem);

@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/loading_login_screen"
-        android:background="@color/purple_200"
+        android:background="@color/button_color"
         android:visibility="gone">
 
         <ImageView

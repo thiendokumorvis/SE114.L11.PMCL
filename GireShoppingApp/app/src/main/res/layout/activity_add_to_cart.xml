@@ -35,58 +35,168 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/temp_item_name" />
+            android:id="@+id/temp_item_name"
+            android:text="NAME"
+            android:textSize="28dp"
+            android:layout_marginVertical="8dp"
+            android:textColor="@color/black" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/temp_item_price" />
+            android:text="PRICE"
+            android:textSize="28dp"
+            android:id="@+id/temp_item_price"
+            android:textColor="@color/button_color"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/teal_700" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="BRAND"
+            android:textSize="18dp"
+            android:layout_marginTop="8dp"
             android:id="@+id/temp_item_brand" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Description:"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
             android:id="@+id/temp_item_desc" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="ID"
+            android:layout_marginBottom="8dp"
             android:id="@+id/temp_item_id" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/teal_700" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Number"
+            android:textSize="18dp"
+            android:layout_marginTop="8dp"
             android:id="@+id/temp_item_number" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/cart_number_text"
+            android:textSize="18dp"
             android:text="In cart: "
             android:visibility="gone" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <RadioGroup
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/number_text"
-            android:text="Number to add:" />
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/number_of_temp_items_to_add"
-            android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Size: "
+                android:textSize="18dp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="S" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="M" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="L" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XL" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XXL" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number"
-            android:text="1" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Color: "
+                android:textSize="18dp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Red" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blue" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="White" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Black" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/number_text"
+                android:textSize="18dp"
+                android:layout_weight="1"
+                android:text="Number to add:" />
+
+            <EditText
+                android:id="@+id/number_of_temp_items_to_add"
+                android:layout_width="16dp"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:ems="10"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:text="1" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginVertical="8dp">
 
             <Button
                 android:layout_width="wrap_content"
