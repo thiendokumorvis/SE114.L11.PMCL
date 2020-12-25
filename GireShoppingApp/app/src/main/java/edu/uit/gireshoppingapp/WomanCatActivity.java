@@ -47,7 +47,7 @@ public class WomanCatActivity extends AppCompatActivity {
                 .build();
 
         adapter = new ItemAdapter(woman_items, this);
-        woman_cat_recview.setLayoutManager(new GridLayoutManager(this, 2));
+        woman_cat_recview.setLayoutManager(new GridLayoutManager(this, 2, LinearLayoutManager.HORIZONTAL, false));
         woman_cat_recview.setAdapter(adapter);
     }
 
