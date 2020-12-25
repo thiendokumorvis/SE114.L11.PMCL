@@ -43,7 +43,7 @@ public class AddToCartActivity extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("all_items/item" + id);
 
-        ref.addValueEventListener(new ValueEventListener() {
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 addToCartItem = dataSnapshot.getValue(Item.class);
@@ -74,6 +74,13 @@ public class AddToCartActivity extends AppCompatActivity {
         removeTempItemFromCart = findViewById(R.id.remove_temp_item_from_cart);
         numberText = findViewById(R.id.number_text);
         cartNumberText = findViewById(R.id.cart_number_text);
+
+        if(addToCartItem.getId() == null)
+        {
+            Intent intent = new Intent(AddToCartActivity.this, AddToCartActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
         Glide.with(this)
                 .asBitmap()

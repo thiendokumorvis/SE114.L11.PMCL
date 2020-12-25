@@ -47,18 +47,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:src="@drawable/woman"
+                        android:id="@+id/woman_cat"
                         android:layout_marginHorizontal="8dp" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:src="@drawable/man"
+                        android:id="@+id/man_cat"
                         android:layout_marginHorizontal="8dp" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:src="@drawable/kids"
+                        android:id="@+id/kid_cat"
                         android:layout_marginHorizontal="8dp" />
 
                 </LinearLayout>
