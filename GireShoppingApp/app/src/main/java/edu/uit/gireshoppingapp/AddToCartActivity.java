@@ -2,6 +2,7 @@ package edu.uit.gireshoppingapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -22,7 +23,7 @@ import org.w3c.dom.Text;
 
 public class AddToCartActivity extends AppCompatActivity {
 
-    private static Item addToCartItem = new Item();
+    private static Item addToCartItem;
 
     private ImageView tempItemImage;
     private TextView tempItemId;
@@ -40,10 +41,11 @@ public class AddToCartActivity extends AppCompatActivity {
 
     public static void setItem(String id)
     {
+        addToCartItem = new Item();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("all_items/item" + id);
 
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+        ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 addToCartItem = dataSnapshot.getValue(Item.class);
@@ -74,6 +76,8 @@ public class AddToCartActivity extends AppCompatActivity {
         removeTempItemFromCart = findViewById(R.id.remove_temp_item_from_cart);
         numberText = findViewById(R.id.number_text);
         cartNumberText = findViewById(R.id.cart_number_text);
+
+        // TODO: Synchronize
 
         if(addToCartItem.getId() == null)
         {
