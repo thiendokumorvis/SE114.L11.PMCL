@@ -116,6 +116,22 @@ public class HomeFragment extends Fragment {
                 getActivity().finish();
             }
         });
+        man_cat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ManCatActivity.class);
+                startActivity(intent);
+                getActivity().finish();
+            }
+        });
+        kid_cat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), KidCatActivity.class);
+                startActivity(intent);
+                getActivity().finish();
+            }
+        });
 
         return view;
     }

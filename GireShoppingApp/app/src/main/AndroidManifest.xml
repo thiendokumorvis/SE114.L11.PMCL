@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GireShoppingApp">
-        <activity android:name=".WomanCatActivity"></activity>
+        <activity android:name=".KidCatActivity"></activity>
+        <activity android:name=".ManCatActivity" />
+        <activity android:name=".WomanCatActivity" />
         <activity android:name=".CheckOutActivity" />
         <activity
             android:name=".AddToCartActivity"
