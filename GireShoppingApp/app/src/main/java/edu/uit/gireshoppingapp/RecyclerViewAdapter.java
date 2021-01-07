@@ -30,6 +30,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     ArrayList<Item> items = new ArrayList<>();
     private Context mContext;
+    Item temp_item = new Item();
 
     public RecyclerViewAdapter(Context mContext, ArrayList<Item> items) {
         this.mContext = mContext;
@@ -57,10 +58,51 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AddToCartActivity.setItem(items.get(position).getId());
-                Intent intent = new Intent(v.getContext(), AddToCartActivity.class);
-                ((Activity)v.getContext()).startActivity(intent);
-                ((Activity)v.getContext()).finish();
+                readData(items.get(position).getId(), new ItemAdapter.OnGetDataListener() {
+                    @Override
+                    public void onSuccess(DataSnapshot dataSnapshot) {
+                        AddToCartActivity.setItem(temp_item);
+                        Intent intent = new Intent(v.getContext(), AddToCartActivity.class);
+                        ((Activity)v.getContext()).startActivity(intent);
+                        ((Activity)v.getContext()).finish();
+                    }
+                    @Override
+                    public void onStart() {
+                        //when starting
+                        Log.d("ONSTART", "Started");
+                    }
+
+                    @Override
+                    public void onFailure() {
+                        Log.d("onFailure", "Failed");
+                    }
+                });
+            }
+        });
+    }
+
+    public interface OnGetDataListener {
+        //this is for callbacks
+        void onSuccess(DataSnapshot dataSnapshot);
+        void onStart();
+        void onFailure();
+    }
+    public void readData(String id, final ItemAdapter.OnGetDataListener listener) {
+        listener.onStart();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference("all_items/item" + id);
+
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                temp_item = dataSnapshot.getValue(Item.class);
+                listener.onSuccess(dataSnapshot);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // System.out.println("The read failed: " + databaseError.getCode());
+                listener.onFailure();
             }
         });
     }

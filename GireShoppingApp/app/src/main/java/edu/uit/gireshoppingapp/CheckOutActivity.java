@@ -27,8 +27,8 @@ public class CheckOutActivity extends AppCompatActivity {
         totalPrice = findViewById(R.id.total_price_text);
         listOfItems = findViewById(R.id.item_list_text);
 
-        totalPrice.setText("TOTAL PRICE: " + CartFragment.getTotalPrice());
-        listOfItems.setText("ITEM(s): " + CartFragment.getListOfItems());
+        totalPrice.setText("Total price: " + CartFragment.getTotalPrice());
+        listOfItems.setText("Item(s): " + CartFragment.getListOfItems());
 
         cancelBuyButton = findViewById(R.id.cancel_buy_button);
         buyButton = findViewById(R.id.buy_button);

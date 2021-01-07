@@ -23,12 +23,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
 public class ItemAdapter extends FirebaseRecyclerAdapter<Item, ItemAdapter.ItemViewHolder> {
 
     private Context mContext;
+    Item temp_item = new Item();
 
     public ItemAdapter(@NonNull FirebaseRecyclerOptions<Item> options, Context mContext) {
         super(options);
@@ -47,10 +53,51 @@ public class ItemAdapter extends FirebaseRecyclerAdapter<Item, ItemAdapter.ItemV
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AddToCartActivity.setItem(model.getId());
-                Intent intent = new Intent(v.getContext(), AddToCartActivity.class);
-                ((Activity)v.getContext()).startActivity(intent);
-                ((Activity)v.getContext()).finish();
+                readData(model.getId(), new OnGetDataListener() {
+                    @Override
+                    public void onSuccess(DataSnapshot dataSnapshot) {
+                        AddToCartActivity.setItem(temp_item);
+                        Intent intent = new Intent(v.getContext(), AddToCartActivity.class);
+                        ((Activity)v.getContext()).startActivity(intent);
+                        ((Activity)v.getContext()).finish();
+                    }
+                    @Override
+                    public void onStart() {
+                        //when starting
+                        Log.d("ONSTART", "Started");
+                    }
+
+                    @Override
+                    public void onFailure() {
+                        Log.d("onFailure", "Failed");
+                    }
+                });
+            }
+        });
+    }
+
+    public interface OnGetDataListener {
+        //this is for callbacks
+        void onSuccess(DataSnapshot dataSnapshot);
+        void onStart();
+        void onFailure();
+    }
+    public void readData(String id, final ItemAdapter.OnGetDataListener listener) {
+        listener.onStart();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference("all_items/item" + id);
+
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                temp_item = dataSnapshot.getValue(Item.class);
+                listener.onSuccess(dataSnapshot);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // System.out.println("The read failed: " + databaseError.getCode());
+                listener.onFailure();
             }
         });
     }

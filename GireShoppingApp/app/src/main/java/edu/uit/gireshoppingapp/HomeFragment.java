@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,14 +27,20 @@ public class HomeFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private RecyclerView bestSellingRecView;
+    private RecyclerView allRecView;
     private ItemAdapter adapter1;
     private DatabaseReference mbase1;
     private ItemAdapter adapter2;
     private DatabaseReference mbase2;
+    private ItemAdapter adapter3;
+    private DatabaseReference mbase3;
 
     private ImageView woman_cat;
     private ImageView man_cat;
     private ImageView kid_cat;
+    private TextView featured_text;
+    private TextView best_selling_text;
+    private TextView all_text;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -80,7 +88,7 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = view.findViewById(R.id.featured_recview);
-        mbase1 = FirebaseDatabase.getInstance().getReference("all_items");
+        mbase1 = FirebaseDatabase.getInstance().getReference("featured_items");
 
         FirebaseRecyclerOptions<Item> items
                 = new FirebaseRecyclerOptions.Builder<Item>()
@@ -108,6 +116,18 @@ public class HomeFragment extends Fragment {
         man_cat = view.findViewById(R.id.man_cat);
         kid_cat = view.findViewById(R.id.kid_cat);
 
+        allRecView = view.findViewById(R.id.all_recview);
+        mbase3 = FirebaseDatabase.getInstance().getReference("all_items");
+
+        FirebaseRecyclerOptions<Item> all
+                = new FirebaseRecyclerOptions.Builder<Item>()
+                .setQuery(mbase3, Item.class)
+                .build();
+
+        adapter3 = new ItemAdapter(all, view.getContext());
+        allRecView.setLayoutManager(new LinearLayoutManager(view.getContext(), LinearLayout.HORIZONTAL, false));
+        allRecView.setAdapter(adapter3);
+
         woman_cat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,6 +153,36 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        featured_text = view.findViewById(R.id.featured_text);
+        featured_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), FeaturedActivity.class);
+                startActivity(intent);
+                getActivity().finish();
+            }
+        });
+
+        best_selling_text = view.findViewById(R.id.best_selling_text);
+        best_selling_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), BestSellingActivity.class);
+                startActivity(intent);
+                getActivity().finish();
+            }
+        });
+
+        all_text = view.findViewById(R.id.all_text);
+        all_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AllActivity.class);
+                startActivity(intent);
+                getActivity().finish();
+            }
+        });
+
         return view;
     }
 
@@ -141,6 +191,7 @@ public class HomeFragment extends Fragment {
         super.onStart();
         adapter1.startListening();
         adapter2.startListening();
+        adapter3.startListening();
     }
 
     // Function to tell the app to stop getting
@@ -150,5 +201,6 @@ public class HomeFragment extends Fragment {
         super.onStop();
         adapter1.stopListening();
         adapter2.stopListening();
+        adapter3.stopListening();
     }
 }

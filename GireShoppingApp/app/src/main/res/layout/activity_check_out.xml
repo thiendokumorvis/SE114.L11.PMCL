@@ -16,37 +16,40 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/total_price_text"
-            android:text="TOTAL PRICE: "/>
+            android:text="TOTAL PRICE: " />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/item_list_text"
             android:text="ITEM(s): "
-            android:layout_below="@+id/total_price_text"/>
+            android:layout_below="@+id/total_price_text" />
+
         <TextView
+            android:id="@+id/address_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/address_text"
-            android:text="YOUR ADDRESS: "
-            android:layout_below="@+id/item_list_text"/>
+            android:layout_below="@+id/item_list_text"
+            android:text="Your address: " />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/address_edit_text"
             android:hint="Home address"
-            android:layout_below="@+id/address_text"/>
+            android:layout_below="@+id/address_text" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/buy_button"
             android:text="BUY"
-            android:layout_below="@+id/address_edit_text"/>
+            android:layout_below="@+id/address_edit_text"
+            android:backgroundTint="@color/button_color" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/cancel_buy_button"
             android:text="CANCEL"
-            android:layout_below="@+id/buy_button"/>
+            android:layout_below="@+id/buy_button"
+            android:backgroundTint="@color/button_color" />
 
 
     </RelativeLayout>

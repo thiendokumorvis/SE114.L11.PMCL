@@ -39,23 +39,9 @@ public class AddToCartActivity extends AppCompatActivity {
     private TextView numberText;
     private TextView cartNumberText;
 
-    public static void setItem(String id)
+    public static void setItem(Item temp_item)
     {
-        addToCartItem = new Item();
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = database.getReference("all_items/item" + id);
-
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                addToCartItem = dataSnapshot.getValue(Item.class);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // System.out.println("The read failed: " + databaseError.getCode());
-            }
-        });
+        addToCartItem = temp_item;
     }
 
     @Override
