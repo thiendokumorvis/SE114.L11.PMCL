@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
 
                 android:text="NAME"
-                android:textSize="16dp" />
+                android:textSize="24dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -37,7 +37,7 @@
                 android:id="@+id/cart_number"
                 android:layout_below="@+id/cart_item_name"
                 android:text="IN CART"
-                android:textSize="16dp"/>
+                android:textSize="24dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -45,7 +45,7 @@
                 android:id="@+id/cart_item_price"
                 android:layout_below="@+id/cart_number"
                 android:text="TOTAL PRICE"
-                android:textSize="16dp" />
+                android:textSize="24dp" />
 
         </RelativeLayout>
 

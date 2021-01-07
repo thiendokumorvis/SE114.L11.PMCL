@@ -1,7 +1,9 @@
 package edu.uit.gireshoppingapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,13 +12,21 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.FirebaseError;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -41,6 +51,7 @@ public class HomeFragment extends Fragment {
     private TextView featured_text;
     private TextView best_selling_text;
     private TextView all_text;
+    private SearchView home_search_bar;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -180,6 +191,23 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), AllActivity.class);
                 startActivity(intent);
                 getActivity().finish();
+            }
+        });
+
+        home_search_bar = view.findViewById(R.id.home_search_bar);
+        home_search_bar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                SearchActivity.setQuery(query);
+                Intent intent = new Intent(view.getContext(), SearchActivity.class);
+                ((Activity)view.getContext()).startActivity(intent);
+                ((Activity)view.getContext()).finish();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
             }
         });
 

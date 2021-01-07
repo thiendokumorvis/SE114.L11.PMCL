@@ -22,7 +22,8 @@
                 app:queryBackground="@null"
                 android:background="@drawable/custom_searchview"
                 android:layout_margin="8dp"
-                app:queryHint="Search your product"/>
+                android:id="@+id/home_search_bar"
+                app:queryHint="Search for your product"/>
 
             <TextView
                 android:id="@+id/textView"

@@ -25,18 +25,18 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
+public class SearchRecViewApdater extends RecyclerView.Adapter<SearchRecViewApdater.ViewHolder> {
     private static final String TAG = "RecyclerViewAdapter";
 
     ArrayList<Item> items = new ArrayList<>();
     private Context mContext;
     Item temp_item = new Item();
 
-    public RecyclerViewAdapter(Context mContext) {
+    public SearchRecViewApdater(Context mContext) {
         this.mContext = mContext;
     }
 
-    public RecyclerViewAdapter(Context mContext, ArrayList<Item> items) {
+    public SearchRecViewApdater(Context mContext, ArrayList<Item> items) {
         this.mContext = mContext;
         this.items = items;
     }
@@ -52,9 +52,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder: Called");
         holder.itemName.setText(items.get(position).getName());
-        holder.cartNumber.setText("In cart: " + items.get(position).getNumber());
-        int totalPrice = Integer.parseInt(items.get(position).getNumber()) * Integer.parseInt(items.get(position).getPrice());
-        holder.cartItemPrice.setText("Total price: " + Integer.toString(totalPrice));
+        holder.cartNumber.setVisibility(View.GONE);
+        holder.cartItemPrice.setText("$" + items.get(position).getPrice());
         Glide.with(mContext)
                 .asBitmap()
                 .load(items.get(position).getImgURL())
