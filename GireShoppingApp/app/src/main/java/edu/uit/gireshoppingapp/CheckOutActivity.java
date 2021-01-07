@@ -16,6 +16,7 @@ public class CheckOutActivity extends AppCompatActivity {
     private TextView listOfItems;
     private Button cancelBuyButton;
     private Button buyButton;
+    private Button removeAllButton;
 
 //    private TextView address;
 //    private EditText addressInput;
@@ -32,6 +33,7 @@ public class CheckOutActivity extends AppCompatActivity {
 
         cancelBuyButton = findViewById(R.id.cancel_buy_button);
         buyButton = findViewById(R.id.buy_button);
+        removeAllButton = findViewById(R.id.remove_all_button);
 
         cancelBuyButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,10 +49,19 @@ public class CheckOutActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(CheckOutActivity.this, MainActivity.class);
                 startActivity(intent);
-                finish();
                 CartFragment.buyFunction();
+                finish();
                 Toast.makeText(CheckOutActivity.this, "Transaction completed.",
                         Toast.LENGTH_SHORT).show();
+            }
+        });
+        removeAllButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CheckOutActivity.this, MainActivity.class);
+                startActivity(intent);
+                CartFragment.removeAllFunction();
+                finish();
             }
         });
     }

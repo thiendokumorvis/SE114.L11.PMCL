@@ -38,6 +38,10 @@ public class CartFragment extends Fragment {
     {
         items = new ArrayList<>();
     }
+    public static void removeAllFunction()
+    {
+        items = new ArrayList<>();
+    }
 
     public static String getListOfItems()
     {

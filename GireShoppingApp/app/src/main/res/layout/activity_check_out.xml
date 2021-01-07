@@ -16,41 +16,68 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/total_price_text"
-            android:text="TOTAL PRICE: " />
+            android:text="TOTAL PRICE: "
+            android:textSize="24dp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/item_list_text"
             android:text="ITEM(s): "
-            android:layout_below="@+id/total_price_text" />
+            android:layout_below="@+id/total_price_text"
+            android:textSize="24dp" />
 
         <TextView
             android:id="@+id/address_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/item_list_text"
-            android:text="Your address: " />
+            android:text="Your address: "
+            android:textSize="24dp" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/address_edit_text"
             android:hint="Home address"
             android:layout_below="@+id/address_text" />
-        <Button
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/buy_button"
-            android:text="BUY"
-            android:layout_below="@+id/address_edit_text"
-            android:backgroundTint="@color/button_color" />
+            android:orientation="horizontal"
+            android:layout_marginVertical="8dp"
+            android:layout_below="@id/address_text"
+            android:id="@+id/buy_group">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:id="@+id/buy_button"
+                android:text="BUY"
+                android:backgroundTint="@color/button_color"
+                android:layout_weight="1"
+                android:textSize="18dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:id="@+id/remove_all_button"
+                android:text="REMOVE ALL"
+                android:layout_weight="1"
+                android:backgroundTint="@color/purple_200"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="64dp"
             android:id="@+id/cancel_buy_button"
             android:text="CANCEL"
-            android:layout_below="@+id/buy_button"
-            android:backgroundTint="@color/button_color" />
-
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:layout_below="@+id/buy_group"
+            android:textSize="18dp" />
 
     </RelativeLayout>
 
