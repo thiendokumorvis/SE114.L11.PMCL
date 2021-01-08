@@ -118,7 +118,8 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="S" />
+                android:text="S"
+                android:checked="true" />
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -152,7 +153,8 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Red" />
+                android:text="Red"
+                android:checked="true" />
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

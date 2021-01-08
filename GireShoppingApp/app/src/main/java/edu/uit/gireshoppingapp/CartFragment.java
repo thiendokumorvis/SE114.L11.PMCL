@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -36,6 +37,8 @@ public class CartFragment extends Fragment {
 
     public static void buyFunction()
     {
+        int temp = Integer.parseInt(MainActivity.getCurrentUser().getBalance()) - CartFragment.getTotalPrice();
+        MainActivity.setCurrentBalance(temp);
         items = new ArrayList<>();
     }
     public static void removeAllFunction()

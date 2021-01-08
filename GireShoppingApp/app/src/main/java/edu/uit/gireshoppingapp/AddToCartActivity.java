@@ -65,12 +65,12 @@ public class AddToCartActivity extends AppCompatActivity {
 
         // TODO: Synchronize
 
-        if(addToCartItem.getId() == null)
-        {
-            Intent intent = new Intent(AddToCartActivity.this, AddToCartActivity.class);
-            startActivity(intent);
-            finish();
-        }
+//        if(addToCartItem.getId() == null)
+//        {
+//            Intent intent = new Intent(AddToCartActivity.this, AddToCartActivity.class);
+//            startActivity(intent);
+//            finish();
+//        }
 
         Glide.with(this)
                 .asBitmap()

@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,6 +26,9 @@ public class DashboardFragment extends Fragment {
     private ImageView userImg;
     private TextView username;
     private TextView balance;
+    private TextView address;
+    private EditText edit_address;
+    private Button edit_address_button;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -76,13 +81,34 @@ public class DashboardFragment extends Fragment {
         userImg = view.findViewById(R.id.userImg);
         balance = view.findViewById(R.id.balance);
         username = view.findViewById(R.id.username);
+        address = view.findViewById(R.id.address);
+        edit_address = view.findViewById(R.id.edit_address);
+        edit_address_button = view.findViewById(R.id.edit_address_button);
 
         Glide.with(view.getContext())
                 .asBitmap()
                 .load(user.getImgURL())
                 .into(userImg);
-        balance.setText("BALANCE: " + user.getBalance());
-        username.setText("USERNAME: " + user.getName());
+        balance.setText("Balance: " + user.getBalance());
+        username.setText("Email: " + user.getName());
+        address.setText("Address: " + user.getAddress());
+
+        edit_address_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(edit_address.getText().toString().length() == 0)
+                {
+                    MainActivity.setCurrentAddress("None");
+                    address.setText("Address: " + MainActivity.getCurrentUser().getAddress());
+                }
+                else
+                {
+                    MainActivity.setCurrentAddress(edit_address.getText().toString());
+                    edit_address.setText("");
+                    address.setText("Address: " + MainActivity.getCurrentUser().getAddress());
+                }
+            }
+        });
 
         return view;
     }

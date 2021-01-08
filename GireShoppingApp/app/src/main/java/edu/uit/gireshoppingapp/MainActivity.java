@@ -49,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
         DatabaseReference ref = database.getReference("users/" + mAuth.getUid());
         ref.setValue(user);
     }
+    public static void setCurrentAddress(String s) {
+        user.setAddress(s);
+        DatabaseReference ref = database.getReference("users/" + mAuth.getUid());
+        ref.setValue(user);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

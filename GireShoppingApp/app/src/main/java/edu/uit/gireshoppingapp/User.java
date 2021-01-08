@@ -6,15 +6,17 @@ public class User {
     private String name;
     private String imgURL;
     private String balance;
+    private String address;
 
     public User()
     {
     }
 
-    public User(String name, String imgURL, String balance) {
+    public User(String name, String imgURL, String balance, String address) {
         this.name = name;
         this.imgURL = imgURL;
         this.balance = balance;
+        this.address = address;
     }
 
     public String getName() {
@@ -29,6 +31,10 @@ public class User {
         return balance;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -39,6 +45,10 @@ public class User {
 
     public void setBalance(String balance) {
         this.balance = balance;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @NonNull

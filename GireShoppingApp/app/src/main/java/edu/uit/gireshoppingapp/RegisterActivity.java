@@ -106,7 +106,7 @@ public class RegisterActivity extends AppCompatActivity {
                             database = FirebaseDatabase.getInstance();
                             DatabaseReference ref = database.getReference("users/" + user.getUid());
 
-                            User new_user = new User(email, "https://i.stack.imgur.com/JlSEL.png", "1000000");
+                            User new_user = new User(email, "https://i.stack.imgur.com/JlSEL.png", "1000000", "None");
 
                             ref.setValue(new_user);
 

@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 public class CheckOutActivity extends AppCompatActivity {
 
     private TextView totalPrice;
@@ -17,6 +19,9 @@ public class CheckOutActivity extends AppCompatActivity {
     private Button cancelBuyButton;
     private Button buyButton;
     private Button removeAllButton;
+    private TextView address_edit_text;
+    private TextView balance;
+    private User user;
 
 //    private TextView address;
 //    private EditText addressInput;
@@ -47,12 +52,19 @@ public class CheckOutActivity extends AppCompatActivity {
         buyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CheckOutActivity.this, MainActivity.class);
-                startActivity(intent);
-                CartFragment.buyFunction();
-                finish();
-                Toast.makeText(CheckOutActivity.this, "Transaction completed.",
-                        Toast.LENGTH_SHORT).show();
+                if(CartFragment.getTotalPrice() > Integer.parseInt(MainActivity.getCurrentUser().getBalance()))
+                {
+                    Toast.makeText(v.getContext(), "Please check your balance.", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Intent intent = new Intent(CheckOutActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    CartFragment.buyFunction();
+                    finish();
+                    Toast.makeText(CheckOutActivity.this, "Transaction completed.",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
         removeAllButton.setOnClickListener(new View.OnClickListener() {
@@ -64,5 +76,11 @@ public class CheckOutActivity extends AppCompatActivity {
                 finish();
             }
         });
+        user = new User();
+        user = MainActivity.getCurrentUser();
+        address_edit_text = findViewById(R.id.address_edit_text);
+        address_edit_text.setText(user.getAddress());
+        balance = findViewById(R.id.balance_text);
+        balance.setText("Balance: " + MainActivity.getCurrentUser().getBalance());
     }
 }

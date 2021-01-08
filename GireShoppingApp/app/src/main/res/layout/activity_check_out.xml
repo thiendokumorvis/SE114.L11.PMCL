@@ -12,18 +12,33 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
 
+        <ImageView
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:src="@drawable/cart_icon"
+            android:layout_marginBottom="16dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/cart_icon" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/total_price_text"
             android:text="TOTAL PRICE: "
+            android:layout_below="@id/cart_icon"
             android:textSize="24dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/balance_text"
+            android:text="CURRENT BALANCE: "
+            android:textSize="24dp"
+            android:layout_below="@id/total_price_text"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/item_list_text"
             android:text="ITEM(s): "
-            android:layout_below="@+id/total_price_text"
+            android:layout_below="@+id/balance_text"
             android:textSize="24dp" />
 
         <TextView
@@ -33,19 +48,21 @@
             android:layout_below="@+id/item_list_text"
             android:text="Your address: "
             android:textSize="24dp" />
-        <EditText
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/address_edit_text"
-            android:hint="Home address"
-            android:layout_below="@+id/address_text" />
+            android:text="HOME ADDRESS"
+            android:layout_below="@+id/address_text"
+            android:textSize="24dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginVertical="8dp"
-            android:layout_below="@id/address_text"
+            android:layout_below="@id/address_edit_text"
             android:id="@+id/buy_group">
 
             <Button
