@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +41,9 @@ public class AddToCartActivity extends AppCompatActivity {
     private TextView numberText;
     private TextView cartNumberText;
 
+    private RadioGroup size_radio_group;
+    private RadioGroup color_radio_group;
+
     public static void setItem(Item temp_item)
     {
         addToCartItem = temp_item;
@@ -63,14 +68,11 @@ public class AddToCartActivity extends AppCompatActivity {
         numberText = findViewById(R.id.number_text);
         cartNumberText = findViewById(R.id.cart_number_text);
 
-        // TODO: Synchronize
+        size_radio_group = findViewById(R.id.size_radio_group);
+        color_radio_group = findViewById(R.id.color_radio_group);
 
-//        if(addToCartItem.getId() == null)
-//        {
-//            Intent intent = new Intent(AddToCartActivity.this, AddToCartActivity.class);
-//            startActivity(intent);
-//            finish();
-//        }
+        ((RadioButton)size_radio_group.getChildAt(1)).setChecked(true);
+        ((RadioButton)color_radio_group.getChildAt(1)).setChecked(true);
 
         Glide.with(this)
                 .asBitmap()
