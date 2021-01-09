@@ -17,6 +17,9 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -35,10 +38,21 @@ public class CartFragment extends Fragment {
     private RelativeLayout emptyCartScreen;
     private RelativeLayout cartScreen;
 
+    private static FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private static FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
     public static void buyFunction()
     {
         int temp = Integer.parseInt(MainActivity.getCurrentUser().getBalance()) - CartFragment.getTotalPrice();
         MainActivity.setCurrentBalance(temp);
+        String ordered = "";
+        for(int i = 0; i < items.size(); i++)
+        {
+            ordered = ordered + "(" + items.get(i).getId() + " " + items.get(i).getNumber() + ")";
+        }
+        Order order = new Order(ordered);
+        DatabaseReference ref = database.getReference("orders/" + mAuth.getUid());
+        ref.setValue(order);
         items = new ArrayList<>();
     }
     public static void removeAllFunction()
