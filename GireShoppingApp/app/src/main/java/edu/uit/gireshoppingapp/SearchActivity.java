@@ -46,7 +46,7 @@ public class SearchActivity extends AppCompatActivity {
                 for(DataSnapshot postSnapshot: snapshot.getChildren())
                 {
                     Item post = postSnapshot.getValue(Item.class);
-                    if(post.getName().toLowerCase().contains(query.toLowerCase()))
+                    if(post.getName().toLowerCase().contains(query.toLowerCase()) || post.getPrice().toLowerCase().contains(query.toLowerCase()))
                     {
                         items.add(post);
                         adapter.setItems(items);

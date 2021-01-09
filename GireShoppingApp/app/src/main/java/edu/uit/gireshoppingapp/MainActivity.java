@@ -95,8 +95,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 mAuth.signOut();
                 user = null;
-                finish();
                 startActivity(intent);
+                finish();
                 return true;
             }
         });
@@ -107,6 +107,18 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.about :
+                Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+                startActivity(intent);
+                finish();
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     // Setup toolbar
