@@ -1,0 +1,735 @@
+{
+  "all_items" : {
+    "item1" : {
+      "brand" : "BRAND A",
+      "desc" : "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.",
+      "id" : "1",
+      "imgURL" : "https://media.customon.com/unsafe/600x600/img.customon.com/img/6077398/19227,18,2,0,12,184,183.38116591928,23,20,2daa8dfa2dcec6e389a2fd48705cd481/merchantimagenew/parker-square---numberphile-women-s-t-shirt-black.jpg",
+      "name" : "Woman T-shirt",
+      "number" : "990",
+      "price" : "150"
+    },
+    "item10" : {
+      "brand" : "Denim",
+      "desc" : "ÁO KHOÁC JEAN NAM CÓ NÓN MẪU MỚI 2020 CỰC HOT",
+      "id" : "10",
+      "imgURL" : "https://cf.shopee.vn/file/b10982d48bed06c4ece403468cfc6cfe",
+      "name" : "ÁO KHOÁC JEAN",
+      "number" : "950",
+      "price" : "169"
+    },
+    "item11" : {
+      "brand" : "HQ",
+      "desc" : "Giày Da Nam Thời Trang Hàn Quốc 2020",
+      "id" : "11",
+      "imgURL" : "https://cf.shopee.vn/file/fa7ef143c5dffc34486e7bb71cac6e0e",
+      "name" : "Giày Da Nam",
+      "number" : "1200",
+      "price" : "490"
+    },
+    "item12" : {
+      "brand" : "Na",
+      "desc" : "Giày Thể Thao Cổ Cao In Hình Naruto Độc Đáo Cá Tính Cho Nam",
+      "id" : "12",
+      "imgURL" : "https://cf.shopee.vn/file/082e81f42c11bbc03b76378deec54b71",
+      "name" : "Giày Thể Thao",
+      "number" : "250",
+      "price" : "460"
+    },
+    "item13" : {
+      "brand" : "Bull",
+      "desc" : "Giày Thể Thao Lót Nhung Cotton Cổ Cao Giữ Ấm Mùa Đông Cho Nam",
+      "id" : "13",
+      "imgURL" : "https://cf.shopee.vn/file/243c68a1a900740623872efdc64ce56e_tn",
+      "name" : "Giày TT Cotton",
+      "number" : "285",
+      "price" : "560"
+    },
+    "item14" : {
+      "brand" : "ZM",
+      "desc" : "Quần Âu Nam Trơn ZM Dáng Ôm Vải Chống Nhăn Chống Xù, Quần Tây Nam Hàn Quốc Cao Cấp",
+      "id" : "14",
+      "imgURL" : "https://cf.shopee.vn/file/9d375627412080e7d27a7157c28f228a",
+      "name" : "Quần Âu Nam",
+      "number" : "140",
+      "price" : "84"
+    },
+    "item15" : {
+      "brand" : "Unisex",
+      "desc" : "Quần baggy ống rộng Form Unisex Tặng Kèm Chain Xích",
+      "id" : "15",
+      "imgURL" : "https://cf.shopee.vn/file/ea1c38f209fba83bff8bdff7d907483f",
+      "name" : "Quần baggy",
+      "number" : "1200",
+      "price" : "133"
+    },
+    "item16" : {
+      "brand" : "Denim",
+      "desc" : "Quần Jean Nam Chất Bò Cao Cấp Đen Rách Gối | KÈM NHIỀU MẪU MỚI",
+      "id" : "16",
+      "imgURL" : "https://cf.shopee.vn/file/990c0cdefc40f828d60a9cadedca3f94_tn",
+      "name" : "Quần Jean Nam",
+      "number" : "970",
+      "price" : "139"
+    },
+    "item17" : {
+      "brand" : "Unisex",
+      "desc" : "Áo Dạ kẻ caro dáng dài, áo khoác Dạ trơn dáng ngắn",
+      "id" : "17",
+      "imgURL" : "https://cf.shopee.vn/file/666262966decaf070973270aaf6f77f5",
+      "name" : "Áo Dạ caro",
+      "number" : "137",
+      "price" : "418"
+    },
+    "item18" : {
+      "brand" : "Basic",
+      "desc" : "Áo ghile len vặn thừng xương cá basic phong cách hàn quốc",
+      "id" : "18",
+      "imgURL" : "https://cf.shopee.vn/file/a474f4cb43ab60c2d96f48df39aea7ad_tn",
+      "name" : "Áo ghile len",
+      "number" : "180",
+      "price" : "150"
+    },
+    "item19" : {
+      "brand" : "Len",
+      "desc" : "Áo sơ mi/Áo len dệt thời trang thanh lịch",
+      "id" : "19",
+      "imgURL" : "https://cf.shopee.vn/file/7b7312467fb3f3cca513ea758131868b_tn",
+      "name" : "Áo sơ mi",
+      "number" : "510",
+      "price" : "185"
+    },
+    "item2" : {
+      "brand" : "BRAND B",
+      "desc" : "Kid shirts for summer.",
+      "id" : "2",
+      "imgURL" : "https://i.pinimg.com/originals/b5/da/20/b5da204d00798266ada616e00c79a947.jpg",
+      "name" : "Kid T-shirt",
+      "number" : "100",
+      "price" : "350"
+    },
+    "item20" : {
+      "brand" : "BoOt",
+      "desc" : "Giày boot nữ nhiều màu sắc",
+      "id" : "20",
+      "imgURL" : "https://cf.shopee.vn/file/63cb5c53fb895cfb9d1bf15449c1a31b_tn",
+      "name" : "Giày boot nữ",
+      "number" : "152",
+      "price" : "139"
+    },
+    "item21" : {
+      "brand" : "Sequin",
+      "desc" : "giày cao gót bạc mới mùa xuân nữ nhọn màu đen sexy tất cả các trận đấu đơn đính sequin đỏ",
+      "id" : "21",
+      "imgURL" : "https://cf.shopee.vn/file/40923e61c2dc5fa4b333d5edf6b9c693",
+      "name" : "Giày cao gót",
+      "number" : "1000",
+      "price" : "432"
+    },
+    "item22" : {
+      "brand" : "YIBO",
+      "desc" : "Giày Vương Nhất Bác YIBO phim Trần Tình Lệnh Lam Vong Cơ phim Trần Tình Lệnh thế thao đi học đi chơi",
+      "id" : "22",
+      "imgURL" : "https://cf.shopee.vn/file/7ff5707f69d95327a963eb5a46542ffb",
+      "name" : "Giày phim",
+      "number" : "347",
+      "price" : "200"
+    },
+    "item23" : {
+      "brand" : "Gumac",
+      "desc" : "Quần jean loe xẻ gấu QJA9234 GUMAC",
+      "id" : "23",
+      "imgURL" : "https://cf.shopee.vn/file/6593a075b27b9f7848430b694addb9a9_tn",
+      "name" : "Quần jean",
+      "number" : "992",
+      "price" : "260"
+    },
+    "item24" : {
+      "brand" : "HQ",
+      "desc" : "Quần Nhung Ống Rộng Lưng Cao Màu Hồng Phong Cách Hàn Quốc Cho Nữ",
+      "id" : "24",
+      "imgURL" : "https://cf.shopee.vn/file/8167d2ea8443f3427d642023aed39a04",
+      "name" : "Quần Nhung",
+      "number" : "300",
+      "price" : "172"
+    },
+    "item25" : {
+      "brand" : "Legging",
+      "desc" : "Quần Nhung Ống Rộng Lưng Cao Màu Hồng Phong Cách Hàn Quốc Cho Nữ",
+      "id" : "25",
+      "imgURL" : "https://cf.shopee.vn/file/ba57d212de34136747b0564d5f7a6248",
+      "name" : "Quần legging",
+      "number" : "386",
+      "price" : "65"
+    },
+    "item26" : {
+      "brand" : "Ghile",
+      "desc" : "Áo ghi lê nỉ cho bé trai bé gái sơ sinh 3-12kg, hàng đẹp",
+      "id" : "26",
+      "imgURL" : "https://cf.shopee.vn/file/94a21451fe1d6570ffbd5c35a100633a",
+      "name" : "Áo ghi lê",
+      "number" : "950",
+      "price" : "19"
+    },
+    "item27" : {
+      "brand" : "WAPYPY",
+      "desc" : "Áo giữ nhiệt cho bé WAPYPY áo thun cổ lọ họa tiết chữ đáng yêu chất cotton hàng xuất  u Mỹ",
+      "id" : "27",
+      "imgURL" : "https://cf.shopee.vn/file/04b3a6df5adf5a920ef0cb81b7f71940",
+      "name" : "Áo giữ nhiệt",
+      "number" : "75",
+      "price" : "65"
+    },
+    "item28" : {
+      "brand" : "QATE",
+      "desc" : "Áo khoác dạ kẻ mũ tai gấu chất đẹp QATE411 cho bé trai và bé gái",
+      "id" : "28",
+      "imgURL" : "https://cf.shopee.vn/file/c07d38188c4823e5d5c1f4017bf05b0e_tn",
+      "name" : "Áo khoác dạ",
+      "number" : "330",
+      "price" : "105"
+    },
+    "item29" : {
+      "brand" : "Chambi",
+      "desc" : "Giày Cổ Cao Chun Len Nơ Chấm Bi Cho Bé Gái Size 21-30",
+      "id" : "29",
+      "imgURL" : "https://cf.shopee.vn/file/0b12c6c3ac848d5938f4156ae4e8020d",
+      "name" : "Giày Cổ Cao",
+      "number" : "500",
+      "price" : "159"
+    },
+    "item3" : {
+      "brand" : "BRAND C",
+      "desc" : "t-shirt for men is made from 100% premium cotton which is pre-shrunk and bio-washed for longevity is a perfect treat for Men & Boys who like to move out in style. Manufactured by Say It Loud, one of the leading online sellers for printed t-shirts",
+      "id" : "3",
+      "imgURL" : "https://img.looksgud.com/upload/item-image/890/j3bb/j3bb-kultprit-men-black-solid-square-neck-t-shirt_500x500_1.jpg",
+      "name" : "Men T-shirt",
+      "number" : "200",
+      "price" : "230"
+    },
+    "item30" : {
+      "brand" : "Thu",
+      "desc" : "Giày Tập Đi Bé Trai Bé Gái Chống Trượt Hình Thú",
+      "id" : "30",
+      "imgURL" : "https://cf.shopee.vn/file/39ef282263d5af32ed53ecee5c0580d1",
+      "name" : "Giày Tập Đi",
+      "number" : "950",
+      "price" : "29"
+    },
+    "item31" : {
+      "brand" : "HQ",
+      "desc" : "Giày trẻ em dáng thể thao phong cách Hàn Quốc giày cho bé trai bé gái từ 0-3 tuổi siêu nhẹ chống trơn trượt G20",
+      "id" : "31",
+      "imgURL" : "https://cf.shopee.vn/file/e5e0ae14bd837f6bc2d02c18c59f19e2",
+      "name" : "Giày trẻ em",
+      "number" : "399",
+      "price" : "129"
+    },
+    "item32" : {
+      "brand" : "Nibong",
+      "desc" : "Quần chục nỉ bông siêu ấm siêu đẹp cho bé trai/gái",
+      "id" : "32",
+      "imgURL" : "https://cf.shopee.vn/file/bf01a2e4e97a7a9ea5ace1c88aeec89d_tn",
+      "name" : "Quần nỉ bông",
+      "number" : "950",
+      "price" : "14"
+    },
+    "item33" : {
+      "brand" : "KidsOne",
+      "desc" : "Quần Nỉ Bông Lót Lông Thu Đông Cho Bé Trai Và Bé Gái Size 8-25kg KidsOne QN06",
+      "id" : "33",
+      "imgURL" : "https://cf.shopee.vn/file/5466b4cb22b01668783b031acc742c6f",
+      "name" : "Quần Nỉ Bông",
+      "number" : "490",
+      "price" : "66"
+    },
+    "item34" : {
+      "brand" : "Nibong",
+      "desc" : "Quần trẻ em - Quần Nỉ mông thú bé trai bé gái 8-18kg",
+      "id" : "34",
+      "imgURL" : "https://cf.shopee.vn/file/82be222623f8bf8dd07e775cda50dca8_tn",
+      "name" : "Quần trẻ em",
+      "number" : "147",
+      "price" : "19"
+    },
+    "item4" : {
+      "brand" : "BRAND D",
+      "desc" : "2018 Men's Tank Top Slim Fit Collocation Shirt Square Collar Breathable Vest Cotton Wide Shoulder Underwear Sleeveless Men",
+      "id" : "4",
+      "imgURL" : "https://ae01.alicdn.com/kf/HTB1uW_jXojrK1RkHFNRq6ySvpXaG.jpg",
+      "name" : "Man Tank-top",
+      "number" : "254",
+      "price" : "130"
+    },
+    "item5" : {
+      "brand" : "BRAND E",
+      "desc" : "Sexy Summer Vintage Women Dress Fashion Summer Solid Square Neck Short Sleeve Lace Up Ruched Bodycon Mini Party Dress vestidos",
+      "id" : "5",
+      "imgURL" : "https://www.dhresource.com/0x0/f2/albu/g10/M01/82/AD/rBVaWVz7Yb2AN6tYAAEUXGg9ZMQ170.jpg/sexy-summer-vintage-women-dress-fashion-summer.jpg",
+      "name" : "Summer Dress",
+      "number" : "25",
+      "price" : "525"
+    },
+    "item6" : {
+      "brand" : "BRAND F",
+      "desc" : "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.",
+      "id" : "6",
+      "imgURL" : "https://cf.shopee.vn/file/99050d25b910236a033e9966d29e754e",
+      "name" : "Woman dress",
+      "number" : "16",
+      "price" : "420"
+    },
+    "item7" : {
+      "brand" : "BRAND G",
+      "desc" : "This shirt provides superior comfort and durability for daily routine or gym wear and look good doing it all with one shirt!",
+      "id" : "7",
+      "imgURL" : "https://cf.shopee.vn/file/6c23171873f61cdafd19642bb9380ab7",
+      "name" : "Gym shirt",
+      "number" : "153",
+      "price" : "120"
+    },
+    "item8" : {
+      "brand" : "HD2000Shop",
+      "desc" : "Áo thun tee Logo M họa tiết sóng nước middle water unisex form rộng tay lỡ",
+      "id" : "8",
+      "imgURL" : "https://cf.shopee.vn/file/718dbf6068ed90b2072a578871447601_tn",
+      "name" : "Áo thun tee Logo M",
+      "number" : "1000",
+      "price" : "89"
+    },
+    "item9" : {
+      "brand" : "ASALA",
+      "desc" : "Áo khoác sơ mi caro ASALA nam",
+      "id" : "9",
+      "imgURL" : "https://cf.shopee.vn/file/dad85f7394f38c0ef49e7d405401911e_tn",
+      "name" : "Áo khoác sơ mi",
+      "number" : "1000",
+      "price" : "60"
+    }
+  },
+  "best_selling_items" : {
+    "item5" : {
+      "brand" : "BRAND E",
+      "desc" : "Sexy Summer Vintage Women Dress Fashion Summer Solid Square Neck Short Sleeve Lace Up Ruched Bodycon Mini Party Dress vestidos",
+      "id" : "5",
+      "imgURL" : "https://www.dhresource.com/0x0/f2/albu/g10/M01/82/AD/rBVaWVz7Yb2AN6tYAAEUXGg9ZMQ170.jpg/sexy-summer-vintage-women-dress-fashion-summer.jpg",
+      "name" : "Summer Dress",
+      "number" : "25",
+      "price" : "525"
+    },
+    "item6" : {
+      "brand" : "BRAND F",
+      "desc" : "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.",
+      "id" : "6",
+      "imgURL" : "https://cf.shopee.vn/file/99050d25b910236a033e9966d29e754e",
+      "name" : "Woman dress",
+      "number" : "16",
+      "price" : "420"
+    },
+    "item7" : {
+      "brand" : "BRAND G",
+      "desc" : "This shirt provides superior comfort and durability for daily routine or gym wear and look good doing it all with one shirt!",
+      "id" : "7",
+      "imgURL" : "https://cf.shopee.vn/file/6c23171873f61cdafd19642bb9380ab7",
+      "name" : "Gym shirt",
+      "number" : "153",
+      "price" : "120"
+    }
+  },
+  "featured_items" : {
+    "item1" : {
+      "brand" : "BRAND A",
+      "desc" : "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.",
+      "id" : "1",
+      "imgURL" : "https://media.customon.com/unsafe/600x600/img.customon.com/img/6077398/19227,18,2,0,12,184,183.38116591928,23,20,2daa8dfa2dcec6e389a2fd48705cd481/merchantimagenew/parker-square---numberphile-women-s-t-shirt-black.jpg",
+      "name" : "Woman T-shirt",
+      "number" : "990",
+      "price" : "150"
+    },
+    "item2" : {
+      "brand" : "BRAND B",
+      "desc" : "Kid shirts for summer.",
+      "id" : "2",
+      "imgURL" : "https://i.pinimg.com/originals/b5/da/20/b5da204d00798266ada616e00c79a947.jpg",
+      "name" : "Kid T-shirt",
+      "number" : "100",
+      "price" : "350"
+    },
+    "item3" : {
+      "brand" : "BRAND C",
+      "desc" : "t-shirt for men is made from 100% premium cotton which is pre-shrunk and bio-washed for longevity is a perfect treat for Men & Boys who like to move out in style. Manufactured by Say It Loud, one of the leading online sellers for printed t-shirts",
+      "id" : "3",
+      "imgURL" : "https://img.looksgud.com/upload/item-image/890/j3bb/j3bb-kultprit-men-black-solid-square-neck-t-shirt_500x500_1.jpg",
+      "name" : "Men T-shirt",
+      "number" : "200",
+      "price" : "230"
+    },
+    "item4" : {
+      "brand" : "BRAND D",
+      "desc" : "2018 Men's Tank Top Slim Fit Collocation Shirt Square Collar Breathable Vest Cotton Wide Shoulder Underwear Sleeveless Men",
+      "id" : "4",
+      "imgURL" : "https://ae01.alicdn.com/kf/HTB1uW_jXojrK1RkHFNRq6ySvpXaG.jpg",
+      "name" : "Man Tank-top",
+      "number" : "254",
+      "price" : "130"
+    },
+    "item5" : {
+      "brand" : "BRAND E",
+      "desc" : "Sexy Summer Vintage Women Dress Fashion Summer Solid Square Neck Short Sleeve Lace Up Ruched Bodycon Mini Party Dress vestidos",
+      "id" : "5",
+      "imgURL" : "https://www.dhresource.com/0x0/f2/albu/g10/M01/82/AD/rBVaWVz7Yb2AN6tYAAEUXGg9ZMQ170.jpg/sexy-summer-vintage-women-dress-fashion-summer.jpg",
+      "name" : "Summer Dress",
+      "number" : "25",
+      "price" : "525"
+    }
+  },
+  "kid_items" : {
+    "item2" : {
+      "brand" : "BRAND B",
+      "desc" : "Kid shirts for summer.",
+      "id" : "2",
+      "imgURL" : "https://i.pinimg.com/originals/b5/da/20/b5da204d00798266ada616e00c79a947.jpg",
+      "name" : "Kid T-shirt",
+      "number" : "100",
+      "price" : "350"
+    },
+    "item26" : {
+      "brand" : "Ghile",
+      "desc" : "Áo ghi lê nỉ cho bé trai bé gái sơ sinh 3-12kg, hàng đẹp",
+      "id" : "26",
+      "imgURL" : "https://cf.shopee.vn/file/94a21451fe1d6570ffbd5c35a100633a",
+      "name" : "Áo ghi lê",
+      "number" : "950",
+      "price" : "19"
+    },
+    "item27" : {
+      "brand" : "WAPYPY",
+      "desc" : "Áo giữ nhiệt cho bé WAPYPY áo thun cổ lọ họa tiết chữ đáng yêu chất cotton hàng xuất  u Mỹ",
+      "id" : "27",
+      "imgURL" : "https://cf.shopee.vn/file/04b3a6df5adf5a920ef0cb81b7f71940",
+      "name" : "Áo giữ nhiệt",
+      "number" : "75",
+      "price" : "65"
+    },
+    "item28" : {
+      "brand" : "QATE",
+      "desc" : "Áo khoác dạ kẻ mũ tai gấu chất đẹp QATE411 cho bé trai và bé gái",
+      "id" : "28",
+      "imgURL" : "https://cf.shopee.vn/file/c07d38188c4823e5d5c1f4017bf05b0e_tn",
+      "name" : "Áo khoác dạ",
+      "number" : "330",
+      "price" : "105"
+    },
+    "item29" : {
+      "brand" : "Chambi",
+      "desc" : "Giày Cổ Cao Chun Len Nơ Chấm Bi Cho Bé Gái Size 21-30",
+      "id" : "29",
+      "imgURL" : "https://cf.shopee.vn/file/0b12c6c3ac848d5938f4156ae4e8020d",
+      "name" : "Giày Cổ Cao",
+      "number" : "500",
+      "price" : "159"
+    },
+    "item30" : {
+      "brand" : "Thu",
+      "desc" : "Giày Tập Đi Bé Trai Bé Gái Chống Trượt Hình Thú",
+      "id" : "30",
+      "imgURL" : "https://cf.shopee.vn/file/39ef282263d5af32ed53ecee5c0580d1",
+      "name" : "Giày Tập Đi",
+      "number" : "950",
+      "price" : "29"
+    },
+    "item31" : {
+      "brand" : "HQ",
+      "desc" : "Giày trẻ em dáng thể thao phong cách Hàn Quốc giày cho bé trai bé gái từ 0-3 tuổi siêu nhẹ chống trơn trượt G20",
+      "id" : "31",
+      "imgURL" : "https://cf.shopee.vn/file/e5e0ae14bd837f6bc2d02c18c59f19e2",
+      "name" : "Giày trẻ em",
+      "number" : "399",
+      "price" : "129"
+    },
+    "item32" : {
+      "brand" : "Nibong",
+      "desc" : "Quần chục nỉ bông siêu ấm siêu đẹp cho bé trai/gái",
+      "id" : "32",
+      "imgURL" : "https://cf.shopee.vn/file/bf01a2e4e97a7a9ea5ace1c88aeec89d_tn",
+      "name" : "Quần nỉ bông",
+      "number" : "950",
+      "price" : "14"
+    },
+    "item33" : {
+      "brand" : "KidsOne",
+      "desc" : "Quần Nỉ Bông Lót Lông Thu Đông Cho Bé Trai Và Bé Gái Size 8-25kg KidsOne QN06",
+      "id" : "33",
+      "imgURL" : "https://cf.shopee.vn/file/5466b4cb22b01668783b031acc742c6f",
+      "name" : "Quần Nỉ Bông",
+      "number" : "490",
+      "price" : "66"
+    },
+    "item34" : {
+      "brand" : "Nibong",
+      "desc" : "Quần trẻ em - Quần Nỉ mông thú bé trai bé gái 8-18kg",
+      "id" : "34",
+      "imgURL" : "https://cf.shopee.vn/file/82be222623f8bf8dd07e775cda50dca8_tn",
+      "name" : "Quần trẻ em",
+      "number" : "147",
+      "price" : "19"
+    }
+  },
+  "man_items" : {
+    "item10" : {
+      "brand" : "Denim",
+      "desc" : "ÁO KHOÁC JEAN NAM CÓ NÓN MẪU MỚI 2020 CỰC HOT",
+      "id" : "10",
+      "imgURL" : "https://cf.shopee.vn/file/b10982d48bed06c4ece403468cfc6cfe",
+      "name" : "ÁO KHOÁC JEAN",
+      "number" : "950",
+      "price" : "169"
+    },
+    "item11" : {
+      "brand" : "HQ",
+      "desc" : "Giày Da Nam Thời Trang Hàn Quốc 2020",
+      "id" : "11",
+      "imgURL" : "https://cf.shopee.vn/file/fa7ef143c5dffc34486e7bb71cac6e0e",
+      "name" : "Giày Da Nam",
+      "number" : "1200",
+      "price" : "490"
+    },
+    "item12" : {
+      "brand" : "Na",
+      "desc" : "Giày Thể Thao Cổ Cao In Hình Naruto Độc Đáo Cá Tính Cho Nam",
+      "id" : "12",
+      "imgURL" : "https://cf.shopee.vn/file/082e81f42c11bbc03b76378deec54b71",
+      "name" : "Giày Thể Thao",
+      "number" : "250",
+      "price" : "460"
+    },
+    "item13" : {
+      "brand" : "Bull",
+      "desc" : "Giày Thể Thao Lót Nhung Cotton Cổ Cao Giữ Ấm Mùa Đông Cho Nam",
+      "id" : "13",
+      "imgURL" : "https://cf.shopee.vn/file/243c68a1a900740623872efdc64ce56e_tn",
+      "name" : "Giày TT Cotton",
+      "number" : "285",
+      "price" : "560"
+    },
+    "item14" : {
+      "brand" : "ZM",
+      "desc" : "Quần Âu Nam Trơn ZM Dáng Ôm Vải Chống Nhăn Chống Xù, Quần Tây Nam Hàn Quốc Cao Cấp",
+      "id" : "14",
+      "imgURL" : "https://cf.shopee.vn/file/9d375627412080e7d27a7157c28f228a",
+      "name" : "Quần Âu Nam",
+      "number" : "140",
+      "price" : "84"
+    },
+    "item15" : {
+      "brand" : "Unisex",
+      "desc" : "Quần baggy ống rộng Form Unisex Tặng Kèm Chain Xích",
+      "id" : "15",
+      "imgURL" : "https://cf.shopee.vn/file/ea1c38f209fba83bff8bdff7d907483f",
+      "name" : "Quần baggy",
+      "number" : "1200",
+      "price" : "133"
+    },
+    "item16" : {
+      "brand" : "Denim",
+      "desc" : "Quần Jean Nam Chất Bò Cao Cấp Đen Rách Gối | KÈM NHIỀU MẪU MỚI",
+      "id" : "16",
+      "imgURL" : "https://cf.shopee.vn/file/990c0cdefc40f828d60a9cadedca3f94_tn",
+      "name" : "Quần Jean Nam",
+      "number" : "970",
+      "price" : "139"
+    },
+    "item3" : {
+      "brand" : "BRAND C",
+      "desc" : "t-shirt for men is made from 100% premium cotton which is pre-shrunk and bio-washed for longevity is a perfect treat for Men & Boys who like to move out in style. Manufactured by Say It Loud, one of the leading online sellers for printed t-shirts",
+      "id" : "3",
+      "imgURL" : "https://img.looksgud.com/upload/item-image/890/j3bb/j3bb-kultprit-men-black-solid-square-neck-t-shirt_500x500_1.jpg",
+      "name" : "Men T-shirt",
+      "number" : "200",
+      "price" : "230"
+    },
+    "item4" : {
+      "brand" : "BRAND D",
+      "desc" : "2018 Men's Tank Top Slim Fit Collocation Shirt Square Collar Breathable Vest Cotton Wide Shoulder Underwear Sleeveless Men",
+      "id" : "4",
+      "imgURL" : "https://ae01.alicdn.com/kf/HTB1uW_jXojrK1RkHFNRq6ySvpXaG.jpg",
+      "name" : "Man Tank-top",
+      "number" : "254",
+      "price" : "130"
+    },
+    "item7" : {
+      "brand" : "BRAND G",
+      "desc" : "This shirt provides superior comfort and durability for daily routine or gym wear and look good doing it all with one shirt!",
+      "id" : "7",
+      "imgURL" : "https://cf.shopee.vn/file/6c23171873f61cdafd19642bb9380ab7",
+      "name" : "Gym shirt",
+      "number" : "153",
+      "price" : "120"
+    },
+    "item8" : {
+      "brand" : "HD2000Shop",
+      "desc" : "Áo thun tee Logo M họa tiết sóng nước middle water unisex form rộng tay lỡ",
+      "id" : "8",
+      "imgURL" : "https://cf.shopee.vn/file/718dbf6068ed90b2072a578871447601_tn",
+      "name" : "Áo thun tee Logo M",
+      "number" : "1000",
+      "price" : "89"
+    },
+    "item9" : {
+      "brand" : "ASALA",
+      "desc" : "Áo khoác sơ mi caro ASALA nam",
+      "id" : "9",
+      "imgURL" : "https://cf.shopee.vn/file/dad85f7394f38c0ef49e7d405401911e_tn",
+      "name" : "Áo khoác sơ mi",
+      "number" : "1000",
+      "price" : "60"
+    }
+  },
+  "orders" : {
+    "AphA9Y2TdtZAAwVVTZ0vRj7a6Hi2" : {
+      "ordered" : "(2 1)"
+    },
+    "hNYOO224agRKT2zLbZvhsTbIMIR2" : {
+      "ordered" : "(6 1)(10 5)"
+    },
+    "ozg1xjXJ8cbZfyIi2Ybj33AB8zM2" : {
+      "ordered" : "(2 1)(1 1)"
+    }
+  },
+  "users" : {
+    "AphA9Y2TdtZAAwVVTZ0vRj7a6Hi2" : {
+      "address" : "thanh ba phú thọ",
+      "balance" : "999235",
+      "imgURL" : "https://i.stack.imgur.com/JlSEL.png",
+      "name" : "tienduycr123@gmail.com"
+    },
+    "LWi7rAPgdLhMqRinIBfkyWYoJs93" : {
+      "address" : "123 Đường số 4, phường 5, quận 6",
+      "balance" : "2689",
+      "imgURL" : "https://i.stack.imgur.com/JlSEL.png",
+      "name" : "myemail@gmail.com"
+    },
+    "hNYOO224agRKT2zLbZvhsTbIMIR2" : {
+      "address" : "1199 California",
+      "balance" : "917015",
+      "imgURL" : "https://i.stack.imgur.com/JlSEL.png",
+      "name" : "thiendokumorvis@gmail.com"
+    },
+    "ozg1xjXJ8cbZfyIi2Ybj33AB8zM2" : {
+      "address" : "None",
+      "balance" : "998700",
+      "imgURL" : "https://i.stack.imgur.com/JlSEL.png",
+      "name" : "myemail2@gmail.com"
+    }
+  },
+  "woman_items" : {
+    "item1" : {
+      "brand" : "BRAND A",
+      "desc" : "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.",
+      "id" : "1",
+      "imgURL" : "https://media.customon.com/unsafe/600x600/img.customon.com/img/6077398/19227,18,2,0,12,184,183.38116591928,23,20,2daa8dfa2dcec6e389a2fd48705cd481/merchantimagenew/parker-square---numberphile-women-s-t-shirt-black.jpg",
+      "name" : "Woman T-shirt",
+      "number" : "990",
+      "price" : "150"
+    },
+    "item17" : {
+      "brand" : "Unisex",
+      "desc" : "Áo Dạ kẻ caro dáng dài, áo khoác Dạ trơn dáng ngắn",
+      "id" : "17",
+      "imgURL" : "https://cf.shopee.vn/file/666262966decaf070973270aaf6f77f5",
+      "name" : "Áo Dạ caro",
+      "number" : "137",
+      "price" : "418"
+    },
+    "item18" : {
+      "brand" : "Basic",
+      "desc" : "Áo ghile len vặn thừng xương cá basic phong cách hàn quốc",
+      "id" : "18",
+      "imgURL" : "https://cf.shopee.vn/file/a474f4cb43ab60c2d96f48df39aea7ad_tn",
+      "name" : "Áo ghile len",
+      "number" : "180",
+      "price" : "150"
+    },
+    "item19" : {
+      "brand" : "Len",
+      "desc" : "Áo sơ mi/Áo len dệt thời trang thanh lịch",
+      "id" : "19",
+      "imgURL" : "https://cf.shopee.vn/file/7b7312467fb3f3cca513ea758131868b_tn",
+      "name" : "Áo sơ mi",
+      "number" : "510",
+      "price" : "185"
+    },
+    "item20" : {
+      "brand" : "BoOt",
+      "desc" : "Giày boot nữ nhiều màu sắc",
+      "id" : "20",
+      "imgURL" : "https://cf.shopee.vn/file/63cb5c53fb895cfb9d1bf15449c1a31b_tn",
+      "name" : "Giày boot nữ",
+      "number" : "152",
+      "price" : "139"
+    },
+    "item21" : {
+      "brand" : "Sequin",
+      "desc" : "giày cao gót bạc mới mùa xuân nữ nhọn màu đen sexy tất cả các trận đấu đơn đính sequin đỏ",
+      "id" : "21",
+      "imgURL" : "https://cf.shopee.vn/file/40923e61c2dc5fa4b333d5edf6b9c693",
+      "name" : "Giày cao gót",
+      "number" : "1000",
+      "price" : "432"
+    },
+    "item22" : {
+      "brand" : "YIBO",
+      "desc" : "Giày Vương Nhất Bác YIBO phim Trần Tình Lệnh Lam Vong Cơ phim Trần Tình Lệnh thế thao đi học đi chơi",
+      "id" : "22",
+      "imgURL" : "https://cf.shopee.vn/file/7ff5707f69d95327a963eb5a46542ffb",
+      "name" : "Giày phim",
+      "number" : "347",
+      "price" : "200"
+    },
+    "item23" : {
+      "brand" : "Gumac",
+      "desc" : "Quần jean loe xẻ gấu QJA9234 GUMAC",
+      "id" : "23",
+      "imgURL" : "https://cf.shopee.vn/file/6593a075b27b9f7848430b694addb9a9_tn",
+      "name" : "Quần jean",
+      "number" : "992",
+      "price" : "260"
+    },
+    "item24" : {
+      "brand" : "HQ",
+      "desc" : "Quần Nhung Ống Rộng Lưng Cao Màu Hồng Phong Cách Hàn Quốc Cho Nữ",
+      "id" : "24",
+      "imgURL" : "https://cf.shopee.vn/file/8167d2ea8443f3427d642023aed39a04",
+      "name" : "Quần Nhung",
+      "number" : "300",
+      "price" : "172"
+    },
+    "item25" : {
+      "brand" : "Legging",
+      "desc" : "Quần Nhung Ống Rộng Lưng Cao Màu Hồng Phong Cách Hàn Quốc Cho Nữ",
+      "id" : "25",
+      "imgURL" : "https://cf.shopee.vn/file/ba57d212de34136747b0564d5f7a6248",
+      "name" : "Quần legging",
+      "number" : "386",
+      "price" : "65"
+    },
+    "item5" : {
+      "brand" : "BRAND E",
+      "desc" : "Sexy Summer Vintage Women Dress Fashion Summer Solid Square Neck Short Sleeve Lace Up Ruched Bodycon Mini Party Dress vestidos",
+      "id" : "5",
+      "imgURL" : "https://www.dhresource.com/0x0/f2/albu/g10/M01/82/AD/rBVaWVz7Yb2AN6tYAAEUXGg9ZMQ170.jpg/sexy-summer-vintage-women-dress-fashion-summer.jpg",
+      "name" : "Summer Dress",
+      "number" : "25",
+      "price" : "525"
+    },
+    "item6" : {
+      "brand" : "BRAND F",
+      "desc" : "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.",
+      "id" : "6",
+      "imgURL" : "https://cf.shopee.vn/file/99050d25b910236a033e9966d29e754e",
+      "name" : "Woman dress",
+      "number" : "16",
+      "price" : "420"
+    }
+  }
+}
