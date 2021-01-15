@@ -3,11 +3,13 @@ package edu.uit.gireshoppingapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -52,6 +54,12 @@ public class HomeFragment extends Fragment {
     private TextView best_selling_text;
     private TextView all_text;
     private SearchView home_search_bar;
+
+    private Button price_filter_button;
+    private EditText from_price;
+    private EditText to_price;
+    private Button price_filter;
+    private LinearLayout price_filter_bar;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -208,6 +216,39 @@ public class HomeFragment extends Fragment {
             @Override
             public boolean onQueryTextChange(String newText) {
                 return false;
+            }
+        });
+
+        price_filter_button = view.findViewById(R.id.price_filter_button);
+        from_price = view.findViewById(R.id.from_price);
+        to_price = view.findViewById(R.id.to_price);
+        price_filter = view.findViewById(R.id.price_filter);
+        price_filter_bar = view.findViewById(R.id.price_filter_bar);
+
+        price_filter_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(price_filter_bar.getVisibility() == price_filter_bar.VISIBLE)
+                {
+                    price_filter_bar.setVisibility(price_filter_bar.GONE);
+                }
+                else
+                {
+                    price_filter_bar.setVisibility(price_filter_bar.VISIBLE);
+                }
+            }
+        });
+
+        price_filter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!TextUtils.isEmpty(from_price.getText()) && !TextUtils.isEmpty(to_price.getText()))
+                {
+                    SearchActivity.setQuery("{search_with_price}" + from_price.getText().toString() + "-" + to_price.getText().toString());
+                    Intent intent = new Intent(view.getContext(), SearchActivity.class);
+                    ((Activity)view.getContext()).startActivity(intent);
+                    ((Activity)view.getContext()).finish();
+                }
             }
         });
 

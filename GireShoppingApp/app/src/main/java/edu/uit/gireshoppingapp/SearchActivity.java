@@ -40,25 +40,56 @@ public class SearchActivity extends AppCompatActivity {
 
         adapter = new SearchRecViewApdater(this);
 
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot postSnapshot: snapshot.getChildren())
-                {
-                    Item post = postSnapshot.getValue(Item.class);
-                    if(post.getName().toLowerCase().contains(query.toLowerCase()) || post.getPrice().toLowerCase().contains(query.toLowerCase()))
+        if(query.contains("{search_with_price}"))
+        {
+            int temp_index = query.indexOf("-");
+            String from = query.substring(19, temp_index);
+            String to = query.substring(temp_index + 1);
+            int from_price = Integer.parseInt(from);
+            int to_price = Integer.parseInt(to);
+
+            ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for(DataSnapshot postSnapshot: snapshot.getChildren())
                     {
-                        items.add(post);
-                        adapter.setItems(items);
+                        Item post = postSnapshot.getValue(Item.class);
+                        if(Integer.parseInt(post.getPrice()) >= from_price && Integer.parseInt(post.getPrice()) <= to_price)
+                        {
+                            items.add(post);
+                            adapter.setItems(items);
+                        }
                     }
                 }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-        });
+                }
+            });
+        }
+        else
+        {
+            ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for(DataSnapshot postSnapshot: snapshot.getChildren())
+                    {
+                        Item post = postSnapshot.getValue(Item.class);
+                        if(post.getName().toLowerCase().contains(query.toLowerCase()) || post.getPrice().toLowerCase().contains(query.toLowerCase()))
+                        {
+                            items.add(post);
+                            adapter.setItems(items);
+                        }
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
 
         recyclerView = findViewById(R.id.search_recview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

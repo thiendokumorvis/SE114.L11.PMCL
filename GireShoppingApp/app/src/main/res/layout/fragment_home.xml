@@ -25,6 +25,73 @@
                 android:id="@+id/home_search_bar"
                 app:queryHint="Search for your product"/>
 
+            <Button
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:id="@+id/price_filter_button"
+                android:layout_gravity="end"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/filter_icon"
+                app:backgroundTint="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/price_filter_bar"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:layout_width="128dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:id="@+id/from_price" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$"
+                        android:textSize="28dp"
+                        android:layout_margin="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="to"
+                        android:textSize="28dp"
+                        android:layout_margin="2dp" />
+
+                    <EditText
+                        android:layout_width="128dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:id="@+id/to_price" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$"
+                        android:textSize="28dp"
+                        android:layout_margin="2dp" />
+
+                    <Button
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:id="@+id/price_filter"
+                        android:layout_margin="2dp"
+                        android:background="@drawable/search_icon"
+                        app:backgroundTint="@color/black" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
